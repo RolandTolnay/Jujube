@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */; };
+		2BA00F972109CCC100EDAEBF /* AnalysisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA00F962109CCC100EDAEBF /* AnalysisCell.swift */; };
 		56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639E82109B57C002FDB0F /* ImageProcessor.swift */; };
 		AF6F21AC2109B0BB0055B99E /* Cell+convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21AB2109B0BB0055B99E /* Cell+convenience.swift */; };
 		AF6F21B52109B94E0055B99E /* IdentifiedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B42109B94E0055B99E /* IdentifiedImage.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPicAlgorithm.swift; sourceTree = "<group>"; };
+		2BA00F962109CCC100EDAEBF /* AnalysisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisCell.swift; sourceTree = "<group>"; };
 		4C902BABE7D5FDF028C0D489 /* Pods-Jujube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.release.xcconfig"; sourceTree = "<group>"; };
 		56F639E82109B57C002FDB0F /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		850AF28C01FE5D218A30CF1D /* Pods-Jujube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				AF7941042109B007001A389B /* PhotoCell.swift */,
+				2BA00F962109CCC100EDAEBF /* AnalysisCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */,
 				AF6F21B72109B9710055B99E /* AnalyzedImage.swift in Sources */,
 				AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */,
+				2BA00F972109CCC100EDAEBF /* AnalysisCell.swift in Sources */,
 				AF7941012109A805001A389B /* LoadingViewController.swift in Sources */,
 				2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */,
 			);
@@ -446,7 +450,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7C3BG73H;
 				INFOPLIST_FILE = Jujube/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iquestint.Jujube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -462,7 +469,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7C3BG73H;
 				INFOPLIST_FILE = Jujube/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iquestint.Jujube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

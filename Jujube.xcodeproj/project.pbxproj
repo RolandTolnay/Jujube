@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */; };
+		561D13332109BEE600187283 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 561D13322109BEE600187283 /* MobileNet.mlmodel */; };
+		561D13352109C53500187283 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 561D13342109C53500187283 /* SqueezeNet.mlmodel */; };
 		56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639E82109B57C002FDB0F /* ImageProcessor.swift */; };
+		56F639EB2109B97B002FDB0F /* InstaImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639EA2109B97B002FDB0F /* InstaImageProcessor.swift */; };
 		AF6F21AC2109B0BB0055B99E /* Cell+convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21AB2109B0BB0055B99E /* Cell+convenience.swift */; };
 		AF6F21B52109B94E0055B99E /* IdentifiedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B42109B94E0055B99E /* IdentifiedImage.swift */; };
 		AF6F21B72109B9710055B99E /* AnalyzedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B62109B9710055B99E /* AnalyzedImage.swift */; };
@@ -27,7 +30,10 @@
 /* Begin PBXFileReference section */
 		2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPicAlgorithm.swift; sourceTree = "<group>"; };
 		4C902BABE7D5FDF028C0D489 /* Pods-Jujube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.release.xcconfig"; sourceTree = "<group>"; };
+		561D13322109BEE600187283 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		561D13342109C53500187283 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		56F639E82109B57C002FDB0F /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		56F639EA2109B97B002FDB0F /* InstaImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaImageProcessor.swift; sourceTree = "<group>"; };
 		850AF28C01FE5D218A30CF1D /* Pods-Jujube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.debug.xcconfig"; sourceTree = "<group>"; };
 		AF6F21AB2109B0BB0055B99E /* Cell+convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cell+convenience.swift"; sourceTree = "<group>"; };
 		AF6F21B42109B94E0055B99E /* IdentifiedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiedImage.swift; sourceTree = "<group>"; };
@@ -58,11 +64,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		561D13312109BEC500187283 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				561D13342109C53500187283 /* SqueezeNet.mlmodel */,
+				561D13322109BEE600187283 /* MobileNet.mlmodel */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		56F639E72109B556002FDB0F /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				56F639E82109B57C002FDB0F /* ImageProcessor.swift */,
 				2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */,
+				56F639EA2109B97B002FDB0F /* InstaImageProcessor.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -118,6 +134,7 @@
 				AF7940EB2109A025001A389B /* AppDelegate.swift */,
 				AF6F21AF2109B4CB0055B99E /* Model */,
 				AF7941092109B090001A389B /* Extensions */,
+				561D13312109BEC500187283 /* Resources */,
 				56F639E72109B556002FDB0F /* Service */,
 				AF7941032109AFD9001A389B /* View */,
 				AF7941022109AFC4001A389B /* View Controllers */,
@@ -304,9 +321,12 @@
 				AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */,
 				56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */,
 				AF6F21B72109B9710055B99E /* AnalyzedImage.swift in Sources */,
+				561D13332109BEE600187283 /* MobileNet.mlmodel in Sources */,
+				56F639EB2109B97B002FDB0F /* InstaImageProcessor.swift in Sources */,
 				AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */,
 				AF7941012109A805001A389B /* LoadingViewController.swift in Sources */,
 				2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */,
+				561D13352109C53500187283 /* SqueezeNet.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

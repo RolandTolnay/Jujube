@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */; };
-		561D13332109BEE600187283 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 561D13322109BEE600187283 /* MobileNet.mlmodel */; };
-		561D13352109C53500187283 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 561D13342109C53500187283 /* SqueezeNet.mlmodel */; };
+		56F49AAB2109CEBA00A39B68 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56F49AAA2109CEBA00A39B68 /* Resnet50.mlmodel */; };
 		56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639E82109B57C002FDB0F /* ImageProcessor.swift */; };
 		56F639EB2109B97B002FDB0F /* InstaImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639EA2109B97B002FDB0F /* InstaImageProcessor.swift */; };
 		689157AB2109B9A0003AB7E9 /* InstagramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689157AA2109B9A0003AB7E9 /* InstagramService.swift */; };
@@ -31,8 +30,7 @@
 /* Begin PBXFileReference section */
 		2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPicAlgorithm.swift; sourceTree = "<group>"; };
 		4C902BABE7D5FDF028C0D489 /* Pods-Jujube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.release.xcconfig"; sourceTree = "<group>"; };
-		561D13322109BEE600187283 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
-		561D13342109C53500187283 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		56F49AAA2109CEBA00A39B68 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		56F639E82109B57C002FDB0F /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		56F639EA2109B97B002FDB0F /* InstaImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaImageProcessor.swift; sourceTree = "<group>"; };
 		689157AA2109B9A0003AB7E9 /* InstagramService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramService.swift; sourceTree = "<group>"; };
@@ -69,8 +67,7 @@
 		561D13312109BEC500187283 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				561D13342109C53500187283 /* SqueezeNet.mlmodel */,
-				561D13322109BEE600187283 /* MobileNet.mlmodel */,
+				56F49AAA2109CEBA00A39B68 /* Resnet50.mlmodel */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -322,15 +319,14 @@
 				AF6F21AC2109B0BB0055B99E /* Cell+convenience.swift in Sources */,
 				AF7941052109B007001A389B /* PhotoCell.swift in Sources */,
 				689157AB2109B9A0003AB7E9 /* InstagramService.swift in Sources */,
+				56F49AAB2109CEBA00A39B68 /* Resnet50.mlmodel in Sources */,
 				AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */,
 				56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */,
 				AF6F21B72109B9710055B99E /* AnalyzedImage.swift in Sources */,
-				561D13332109BEE600187283 /* MobileNet.mlmodel in Sources */,
 				56F639EB2109B97B002FDB0F /* InstaImageProcessor.swift in Sources */,
 				AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */,
 				AF7941012109A805001A389B /* LoadingViewController.swift in Sources */,
 				2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */,
-				561D13352109C53500187283 /* SqueezeNet.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

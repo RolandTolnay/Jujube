@@ -17,6 +17,12 @@ class InstagramService {
                                               qos: .background,
                                               attributes: .concurrent)
   
+  func userIcon(completion: @escaping (_ profileURL: URL) -> Void) {
+    api.user("self", success: { (user) in
+      completion(user.profilePicture)
+    }, failure: nil)
+  }
+  
   func isLoggedIn() -> Bool {
     
     return api.isAuthenticated

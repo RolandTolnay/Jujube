@@ -64,7 +64,7 @@ extension MainViewController: UICollectionViewDataSource {
       else { return UICollectionViewCell() }
 
     let image = analyzedImages[0]
-    cell.setup(with: image.image, estimatedLikes: Int(image.averageLikes))
+    cell.setup(with: image.image, estimatedLikes: image.averageLikes)
 
     return cell
   }

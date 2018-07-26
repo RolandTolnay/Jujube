@@ -40,6 +40,10 @@ class InstagramService {
     })
   }
   
+  func logout() {
+    api.logout()
+  }
+  
   func latestImages(completion: @escaping (_ images: [AnalyzedActor]?) -> Void) {
     
       api.recentMedia(fromUser: "self", count: 20, success: { mediaList in
@@ -47,9 +51,11 @@ class InstagramService {
         let requestsGroup = DispatchGroup()
         var analyzedActors = [AnalyzedActor]()
         
+        self.concurrentQueue.async {
+          
+        
         for media in mediaList {
           
-          self.concurrentQueue.async {
             requestsGroup.enter()
             self.getDataFromUrl(url: media.images.standardResolution.url,
                                 completion: { (data) in
@@ -73,11 +79,13 @@ class InstagramService {
                                   }
             })
           }
+          
+          
+          requestsGroup.notify(queue: DispatchQueue.main, execute: {
+            completion(analyzedActors)
+          })
         }
         
-        requestsGroup.notify(queue: DispatchQueue.main, execute: {
-          completion(analyzedActors)
-        })
       }, failure: { error in
         print("Could not fetch user media with error: \(error.localizedDescription)")
         completion(nil)

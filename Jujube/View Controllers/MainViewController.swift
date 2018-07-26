@@ -51,6 +51,17 @@ class MainViewController: UIViewController {
 
   private func presentLogin() {
     
+    guard !InstagramService.shared.isLoggedIn() else {
+      
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      guard let vc = storyboard.instantiateViewController(withIdentifier: "loadingVC") as? LoadingViewController else {
+        return
+      }
+      
+      self.present(vc, animated: true, completion: nil)
+      return
+    }
+    
     guard let navigationController = navigationController else {
       return
     }
@@ -71,7 +82,8 @@ class MainViewController: UIViewController {
   }
     
     @IBAction func didPressLogout(_ sender: UIBarButtonItem) {
-        // TODO
+      InstagramService.shared.logout()
+      presentLogin()
     }
     
   @IBAction func didTapAccountIcon(_ sender: UIBarButtonItem) {

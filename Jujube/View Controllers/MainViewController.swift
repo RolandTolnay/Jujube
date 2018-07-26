@@ -42,22 +42,9 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
 
     presentLogin()
-    setupBestPicAlgorithm()
     collectionView.isHidden = true
     chooseNewPhotosButton.isHidden = true
     galleryButton.isHidden = false
-  }
-
-  // TODO: Remove this after profile analyzer complete
-  private func setupBestPicAlgorithm() {
-
-    BestPicAlgorithm.shared.setup(withActors: [
-        AnalyzedActor(actor: "lemon", likeCount: 10),
-        AnalyzedActor(actor: "ear", likeCount: 5),
-        AnalyzedActor(actor: "fountain", likeCount: 3),
-        AnalyzedActor(actor: "cliff", likeCount: 32),
-        AnalyzedActor(actor: "dam", likeCount: 6)
-      ])
   }
 
   private func presentLogin() {
@@ -83,12 +70,12 @@ class MainViewController: UIViewController {
 
   @IBAction func didTapAccountIcon(_ sender: UIBarButtonItem) {
     
-//    if instaService.isLoggedIn() {
+    if InstagramService.shared.isLoggedIn() {
       performSegue(withIdentifier: "accountSegue",
                    sender: self)
-//    } else {
-//      presentLogin()
-//    }
+    } else {
+      presentLogin()
+    }
     
   }
   @IBAction func onChoosePhotosTapped(_ sender: Any) {
@@ -106,7 +93,7 @@ class MainViewController: UIViewController {
     present(imagePicker, animated: true, completion: nil)
   }
   
-  func openInstagram(with image: UIImage) {
+  private func openInstagram(with image: UIImage) {
     
     DispatchQueue.main.async {
       

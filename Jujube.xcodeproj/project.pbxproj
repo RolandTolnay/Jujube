@@ -17,6 +17,21 @@
 		AF6F21B52109B94E0055B99E /* IdentifiedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B42109B94E0055B99E /* IdentifiedImage.swift */; };
 		AF6F21B72109B9710055B99E /* AnalyzedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B62109B9710055B99E /* AnalyzedImage.swift */; };
 		AF6F21B92109B9960055B99E /* AnalyzedActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B82109B9960055B99E /* AnalyzedActor.swift */; };
+		AF6F21CB2109F8630055B99E /* ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21BD2109F8620055B99E /* ObjC.swift */; };
+		AF6F21CC2109F8630055B99E /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21BE2109F8620055B99E /* CGRectEx.swift */; };
+		AF6F21CD2109F8630055B99E /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21BF2109F8620055B99E /* CGPointEx.swift */; };
+		AF6F21CE2109F8630055B99E /* LiquidLoadEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C02109F8620055B99E /* LiquidLoadEffect.swift */; };
+		AF6F21CF2109F8630055B99E /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C12109F8620055B99E /* ArrayEx.swift */; };
+		AF6F21D02109F8630055B99E /* LiquidCircleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C22109F8620055B99E /* LiquidCircleEffect.swift */; };
+		AF6F21D12109F8630055B99E /* LiquidUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C32109F8620055B99E /* LiquidUtil.swift */; };
+		AF6F21D22109F8630055B99E /* LiquidLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C42109F8630055B99E /* LiquidLoader.swift */; };
+		AF6F21D32109F8630055B99E /* SimpleCircleLiquidEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C52109F8630055B99E /* SimpleCircleLiquidEngine.swift */; };
+		AF6F21D42109F8630055B99E /* CircularGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C62109F8630055B99E /* CircularGradientLayer.swift */; };
+		AF6F21D52109F8630055B99E /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C72109F8630055B99E /* UIColorEx.swift */; };
+		AF6F21D62109F8630055B99E /* LiquidLineEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C82109F8630055B99E /* LiquidLineEffect.swift */; };
+		AF6F21D72109F8630055B99E /* UIView+Grow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21C92109F8630055B99E /* UIView+Grow.swift */; };
+		AF6F21D82109F8630055B99E /* LiquittableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21CA2109F8630055B99E /* LiquittableCircle.swift */; };
+		AF6F21DB2109FE290055B99E /* SlidingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21DA2109FE290055B99E /* SlidingText.swift */; };
 		AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940EB2109A025001A389B /* AppDelegate.swift */; };
 		AF7940EE2109A025001A389B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940ED2109A025001A389B /* MainViewController.swift */; };
 		AF7940F12109A025001A389B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7940EF2109A025001A389B /* Main.storyboard */; };
@@ -41,6 +56,21 @@
 		AF6F21B42109B94E0055B99E /* IdentifiedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiedImage.swift; sourceTree = "<group>"; };
 		AF6F21B62109B9710055B99E /* AnalyzedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzedImage.swift; sourceTree = "<group>"; };
 		AF6F21B82109B9960055B99E /* AnalyzedActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzedActor.swift; sourceTree = "<group>"; };
+		AF6F21BD2109F8620055B99E /* ObjC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjC.swift; sourceTree = "<group>"; };
+		AF6F21BE2109F8620055B99E /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		AF6F21BF2109F8620055B99E /* CGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
+		AF6F21C02109F8620055B99E /* LiquidLoadEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidLoadEffect.swift; sourceTree = "<group>"; };
+		AF6F21C12109F8620055B99E /* ArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
+		AF6F21C22109F8620055B99E /* LiquidCircleEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidCircleEffect.swift; sourceTree = "<group>"; };
+		AF6F21C32109F8620055B99E /* LiquidUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidUtil.swift; sourceTree = "<group>"; };
+		AF6F21C42109F8630055B99E /* LiquidLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidLoader.swift; sourceTree = "<group>"; };
+		AF6F21C52109F8630055B99E /* SimpleCircleLiquidEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCircleLiquidEngine.swift; sourceTree = "<group>"; };
+		AF6F21C62109F8630055B99E /* CircularGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGradientLayer.swift; sourceTree = "<group>"; };
+		AF6F21C72109F8630055B99E /* UIColorEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEx.swift; sourceTree = "<group>"; };
+		AF6F21C82109F8630055B99E /* LiquidLineEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidLineEffect.swift; sourceTree = "<group>"; };
+		AF6F21C92109F8630055B99E /* UIView+Grow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Grow.swift"; sourceTree = "<group>"; };
+		AF6F21CA2109F8630055B99E /* LiquittableCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquittableCircle.swift; sourceTree = "<group>"; };
+		AF6F21DA2109FE290055B99E /* SlidingText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingText.swift; sourceTree = "<group>"; };
 		AF7940E82109A025001A389B /* Jujube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jujube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF7940EB2109A025001A389B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF7940ED2109A025001A389B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +142,36 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AF6F21BC2109F83E0055B99E /* LiquidLoader */ = {
+			isa = PBXGroup;
+			children = (
+				AF6F21C12109F8620055B99E /* ArrayEx.swift */,
+				AF6F21BF2109F8620055B99E /* CGPointEx.swift */,
+				AF6F21BE2109F8620055B99E /* CGRectEx.swift */,
+				AF6F21C62109F8630055B99E /* CircularGradientLayer.swift */,
+				AF6F21C22109F8620055B99E /* LiquidCircleEffect.swift */,
+				AF6F21C82109F8630055B99E /* LiquidLineEffect.swift */,
+				AF6F21C02109F8620055B99E /* LiquidLoadEffect.swift */,
+				AF6F21C42109F8630055B99E /* LiquidLoader.swift */,
+				AF6F21C32109F8620055B99E /* LiquidUtil.swift */,
+				AF6F21CA2109F8630055B99E /* LiquittableCircle.swift */,
+				AF6F21BD2109F8620055B99E /* ObjC.swift */,
+				AF6F21C52109F8630055B99E /* SimpleCircleLiquidEngine.swift */,
+				AF6F21C72109F8630055B99E /* UIColorEx.swift */,
+				AF6F21C92109F8630055B99E /* UIView+Grow.swift */,
+			);
+			path = LiquidLoader;
+			sourceTree = "<group>";
+		};
+		AF6F21D92109FE100055B99E /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				AF6F21DA2109FE290055B99E /* SlidingText.swift */,
+				AF6F21BC2109F83E0055B99E /* LiquidLoader */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
 		AF7940DF2109A025001A389B = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +204,7 @@
 				AF7940F72109A026001A389B /* Info.plist */,
 				AF7940F42109A026001A389B /* LaunchScreen.storyboard */,
 				AF7940EF2109A025001A389B /* Main.storyboard */,
+				AF6F21D92109FE100055B99E /* ThirdParty */,
 			);
 			path = Jujube;
 			sourceTree = "<group>";
@@ -320,19 +381,34 @@
 			files = (
 				AF6F21B52109B94E0055B99E /* IdentifiedImage.swift in Sources */,
 				AF6F21B92109B9960055B99E /* AnalyzedActor.swift in Sources */,
+				AF6F21CC2109F8630055B99E /* CGRectEx.swift in Sources */,
+				AF6F21CD2109F8630055B99E /* CGPointEx.swift in Sources */,
+				AF6F21D82109F8630055B99E /* LiquittableCircle.swift in Sources */,
+				AF6F21D22109F8630055B99E /* LiquidLoader.swift in Sources */,
+				AF6F21D42109F8630055B99E /* CircularGradientLayer.swift in Sources */,
+				AF6F21CF2109F8630055B99E /* ArrayEx.swift in Sources */,
 				AF7940EE2109A025001A389B /* MainViewController.swift in Sources */,
+				AF6F21CB2109F8630055B99E /* ObjC.swift in Sources */,
 				AF6F21AC2109B0BB0055B99E /* Cell+convenience.swift in Sources */,
+				AF6F21DB2109FE290055B99E /* SlidingText.swift in Sources */,
+				AF6F21D52109F8630055B99E /* UIColorEx.swift in Sources */,
 				AF7941052109B007001A389B /* PhotoCell.swift in Sources */,
 				689157AB2109B9A0003AB7E9 /* InstagramService.swift in Sources */,
+				AF6F21D32109F8630055B99E /* SimpleCircleLiquidEngine.swift in Sources */,
 				56F49AAB2109CEBA00A39B68 /* Resnet50.mlmodel in Sources */,
+				AF6F21D12109F8630055B99E /* LiquidUtil.swift in Sources */,
 				AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */,
+				AF6F21D02109F8630055B99E /* LiquidCircleEffect.swift in Sources */,
 				56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */,
 				AF6F21B72109B9710055B99E /* AnalyzedImage.swift in Sources */,
 				56F639EB2109B97B002FDB0F /* InstaImageProcessor.swift in Sources */,
 				AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */,
+				AF6F21D62109F8630055B99E /* LiquidLineEffect.swift in Sources */,
 				2BA00F972109CCC100EDAEBF /* AnalysisCell.swift in Sources */,
+				AF6F21CE2109F8630055B99E /* LiquidLoadEffect.swift in Sources */,
 				AF7941012109A805001A389B /* LoadingViewController.swift in Sources */,
 				2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */,
+				AF6F21D72109F8630055B99E /* UIView+Grow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

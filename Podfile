@@ -16,4 +16,7 @@ target 'Jujube' do
   pod 'SDWebImage'
   pod 'SwiftyJSON', '~> 4.0'
 
+  pod 'Gallery'
+  pod 'NVActivityIndicatorView'
+
 end

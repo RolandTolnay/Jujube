@@ -11,6 +11,8 @@ import SwiftInstagram
 import ImagePicker
 import Lightbox
 import SDWebImage
+import NVActivityIndicatorView
+import Gallery
 
 class MainViewController: UIViewController {
 
@@ -31,13 +33,14 @@ class MainViewController: UIViewController {
   }
 
   @IBOutlet weak var collectionView: UICollectionView!
-  @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
   var documentController: UIDocumentInteractionController!
 
   @IBOutlet weak var accountButton: UIBarButtonItem!
   @IBOutlet weak var chooseNewPhotosButton: UIButton!
   @IBOutlet weak var galleryButton: UIButton!
-
+  @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
+  
   private var state: State = .empty
 
   override func viewDidLoad() {
@@ -86,17 +89,23 @@ class MainViewController: UIViewController {
 
   @IBAction func onChoosePhotosTapped(_ sender: Any) {
 
-    var config = Configuration()
-    config.doneButtonTitle = "Finish"
-    config.noImagesTitle = "Sorry! There are no images here!"
-    config.recordLocation = false
-    config.allowVideoSelection = false
+//    var config = Configuration()
+//    config.doneButtonTitle = "Finish"
+//    config.noImagesTitle = "Sorry! There are no images here!"
+//    config.recordLocation = false
+//    config.allowVideoSelection = false
+//
+//    let imagePicker = ImagePickerController(configuration: config)
+//    imagePicker.delegate = self
+//    imagePicker.imageLimit = 6
+//
+//    present(imagePicker, animated: true, completion: nil)
 
-    let imagePicker = ImagePickerController(configuration: config)
-    imagePicker.delegate = self
-    imagePicker.imageLimit = 6
+    Config.tabsToShow = [.imageTab]
+    let gallery = GalleryController()
+    gallery.delegate = self
 
-    present(imagePicker, animated: true, completion: nil)
+    present(gallery, animated: true, completion: nil)
   }
   
   private func openInstagram(with image: UIImage) {
@@ -173,6 +182,49 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     let width = (collectionView.bounds.width - itemSpacing) / 2.0
     
     return CGSize(width: width, height: 200)
+  }
+}
+
+extension MainViewController: GalleryControllerDelegate {
+
+  func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
+
+    controller.dismiss(animated: true, completion: nil)
+
+    state = .loading
+    loadingIndicator.startAnimating()
+    self.collectionView.isHidden = true
+    self.galleryButton.isHidden = true
+
+    Image.resolve(images: images) { (resolvedImages) in
+
+      InstaImageProcessor().processImages(images: resolvedImages) { identifiedImages in
+
+        print("Identified images: \(identifiedImages)")
+        let analyzedImages = BestPicAlgorithm.shared.analyzeImages(identifiedImages)
+        self.state = .populated(images: analyzedImages)
+        self.loadingIndicator.stopAnimating()
+        self.collectionView.reloadData()
+
+        self.collectionView.isHidden = false
+        self.chooseNewPhotosButton.isHidden = false
+      }
+    }
+  }
+
+  func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
+
+    return
+  }
+
+  func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
+
+    return
+  }
+
+  func galleryControllerDidCancel(_ controller: GalleryController) {
+
+    controller.dismiss(animated: true, completion: nil)
   }
 }
 

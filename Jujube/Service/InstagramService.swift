@@ -38,27 +38,29 @@ class InstagramService {
         
         for media in mediaList {
           
-          requestsGroup.enter()
-          self.getDataFromUrl(url: media.images.standardResolution.url,
-                              completion: { (data) in
-                                
-                                if let data = data {
+          self.concurrentQueue.async {
+            requestsGroup.enter()
+            self.getDataFromUrl(url: media.images.standardResolution.url,
+                                completion: { (data) in
                                   
-                                  self.imageProcessor.processImage(image: data,
-                                                                   completion: { (actor) in
-                                    if let actor = actor  {
-                                      let analyzedActor = AnalyzedActor(actor: actor,
-                                                                        likeCount: media.likes.count)
-                                      analyzedActors.append(analyzedActor)
-                                      print("Actor: \(actor) for media: \(media.link)")
-                                    }
+                                  if let data = data {
                                     
+                                    self.imageProcessor.processImage(image: data,
+                                                                     completion: { (actor) in
+                                                                      if let actor = actor  {
+                                                                        let analyzedActor = AnalyzedActor(actor: actor,
+                                                                                                          likeCount: media.likes.count)
+                                                                        analyzedActors.append(analyzedActor)
+                                                                        print("Actor: \(actor) for media: \(media.link)")
+                                                                      }
+                                                                      
+                                                                      requestsGroup.leave()
+                                    })
+                                  } else {
                                     requestsGroup.leave()
-                                  })
-                                } else {
-                                  requestsGroup.leave()
-                                }
-          })
+                                  }
+            })
+          }
         }
         
         requestsGroup.notify(queue: self.concurrentQueue, execute: {

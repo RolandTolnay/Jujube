@@ -9,11 +9,20 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
+  
+  var instaService: InstagramService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+      self.instaService.latestImages(completion: { (analyzedActors) in
+        guard let analyzedActors = analyzedActors else {
+          return
+        }
+        
+        BestPicAlgorithm.shared.setup(withActors: analyzedActors)
+        self.dismiss(animated: true, completion: nil)
+      })
+  }
 
 }

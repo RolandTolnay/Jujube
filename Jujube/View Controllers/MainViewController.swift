@@ -36,16 +36,15 @@ class MainViewController: UIViewController {
         return
       }
       
-      self.instaService.latestImages(completion: { (analyzedActors) in
-        guard let analyzedActors = analyzedActors else {
-          return
-        }
-        
-        BestPicAlgorithm.shared.setup(withActors: analyzedActors)
-      })
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      guard let vc = storyboard.instantiateViewController(withIdentifier: "loadingVC") as? LoadingViewController else {
+        return
+      }
+      
+      vc.instaService = self.instaService
+      self.present(vc, animated: true, completion: nil)
     }
   }
-
 
   @IBAction func onChoosePhotosTapped(_ sender: Any) {
 

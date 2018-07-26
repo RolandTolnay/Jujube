@@ -96,7 +96,11 @@ class MainViewController: UIViewController {
       self.present(vc, animated: true, completion: nil)
     }
   }
-
+    
+    @IBAction func didPressLogout(_ sender: UIBarButtonItem) {
+        // TODO
+    }
+    
   @IBAction func didTapAccountIcon(_ sender: UIBarButtonItem) {
     
     onAccountIconTapped()

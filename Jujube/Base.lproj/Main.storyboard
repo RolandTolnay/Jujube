@@ -117,11 +117,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Jujube" id="O0c-ya-jht">
                         <barButtonItem key="backBarButtonItem" title="Back" id="W0i-55-Fuj"/>
-                        <barButtonItem key="rightBarButtonItem" title="Analysis" image="user-default" id="VbE-T5-cQA">
+                        <barButtonItem key="leftBarButtonItem" title="Analysis" image="user-default" id="VbE-T5-cQA">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapAccountIcon:" destination="BYZ-38-t0r" id="zfh-3F-6Ga"/>
                                 <segue destination="y1r-AL-x8j" kind="show" id="kmF-yo-jyW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="jvY-p5-gWm">
+                            <connections>
+                                <action selector="didPressLogout:" destination="BYZ-38-t0r" id="WGO-NB-iXb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

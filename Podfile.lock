@@ -6,21 +6,29 @@ PODS:
   - ImagePicker (3.0.0)
 
 DEPENDENCIES:
-  - ChameleonFramework/Swift
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Hero
   - ImagePicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - ChameleonFramework
     - Hero
     - ImagePicker
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
 
-PODFILE CHECKSUM: e71b8d852f9dcd7a2649e6341c0dde842aed5dc6
+PODFILE CHECKSUM: 36e1f22c4f6e4c93c8e3fb0841a93f8fcfcbca5f
 
 COCOAPODS: 1.5.3

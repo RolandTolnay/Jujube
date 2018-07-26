@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940EB2109A025001A389B /* AppDelegate.swift */; };
-		AF7940EE2109A025001A389B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940ED2109A025001A389B /* ViewController.swift */; };
+		AF7940EE2109A025001A389B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940ED2109A025001A389B /* MainViewController.swift */; };
 		AF7940F12109A025001A389B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7940EF2109A025001A389B /* Main.storyboard */; };
 		AF7940F32109A026001A389B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF7940F22109A026001A389B /* Assets.xcassets */; };
 		AF7940F62109A026001A389B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7940F42109A026001A389B /* LaunchScreen.storyboard */; };
+		AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940FE2109A78B001A389B /* AnalysisViewController.swift */; };
+		AF7941012109A805001A389B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7941002109A805001A389B /* LoadingViewController.swift */; };
 		B4382B5F43EE193302D37E18 /* Pods_Jujube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FC8C99A12A262CD368AF10 /* Pods_Jujube.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +22,13 @@
 		850AF28C01FE5D218A30CF1D /* Pods-Jujube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.debug.xcconfig"; sourceTree = "<group>"; };
 		AF7940E82109A025001A389B /* Jujube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jujube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF7940EB2109A025001A389B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF7940ED2109A025001A389B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF7940ED2109A025001A389B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AF7940F02109A025001A389B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF7940F22109A026001A389B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF7940F52109A026001A389B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF7940F72109A026001A389B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF7940FE2109A78B001A389B /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		AF7941002109A805001A389B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		E4FC8C99A12A262CD368AF10 /* Pods_Jujube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jujube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,7 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				AF7940EB2109A025001A389B /* AppDelegate.swift */,
-				AF7940ED2109A025001A389B /* ViewController.swift */,
+				AF7940ED2109A025001A389B /* MainViewController.swift */,
+				AF7940FE2109A78B001A389B /* AnalysisViewController.swift */,
+				AF7941002109A805001A389B /* LoadingViewController.swift */,
 				AF7940EF2109A025001A389B /* Main.storyboard */,
 				AF7940F22109A026001A389B /* Assets.xcassets */,
 				AF7940F42109A026001A389B /* LaunchScreen.storyboard */,
@@ -219,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF7940EE2109A025001A389B /* ViewController.swift in Sources */,
+				AF7940EE2109A025001A389B /* MainViewController.swift in Sources */,
 				AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */,
+				AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */,
+				AF7941012109A805001A389B /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

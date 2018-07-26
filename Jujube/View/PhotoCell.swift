@@ -9,5 +9,14 @@
 import UIKit
 
 class PhotoCell: UICollectionViewCell {
-    
+
+  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var likesLabel: UILabel!
+
+  func setup(with image: UIImage,
+             estimatedLikes: Int) {
+
+    imageView.image = image
+    likesLabel.text = "Estimated likes: \(estimatedLikes)"
+  }
 }

@@ -13,6 +13,10 @@ class MainViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
 
+  private var analyzedImages: [AnalyzedImage] = [
+    AnalyzedImage(image: UIImage(), averageLikes: 0.0)
+  ]
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -38,6 +42,31 @@ class MainViewController: UIViewController {
     }, failure: { error in
       print("Could not login with error: \(error.localizedDescription)")
     })
+  }
+
+
+  @IBAction func onChoosePhotosTapped(_ sender: Any) {
+
+    
+  }
+}
+
+extension MainViewController: UICollectionViewDataSource {
+
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+    return 6
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    guard let cell = collectionView.dequeueReusableCell(with: PhotoCell.self, for: indexPath)
+      else { return UICollectionViewCell() }
+
+    let image = analyzedImages[0]
+    cell.setup(with: image.image, estimatedLikes: Int(image.averageLikes))
+
+    return cell
   }
 }
 

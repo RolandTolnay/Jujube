@@ -8,7 +8,7 @@
 
 import Foundation
 
-private struct ActorAverage {
+struct ActorAverage {
     let actor: String
     var average: Float
 }
@@ -18,17 +18,26 @@ class BestPicAlgorithm {
     static let shared = BestPicAlgorithm()
     private var averages = [ActorAverage]()
     
+    func getAnalysisResults() -> [ActorAverage] {
+        
+        return averages
+    }
+    
     func setup(withActors actors: [AnalyzedActor]) {
         
         actors.forEach { analyzedActor in
-            if var actorAverage = averages.first(where: {
+            if let index = averages.index(where: {
                 return $0.actor == analyzedActor.actor
             }) {
+                var actorAverage = averages[index]
                 actorAverage.average = (actorAverage.average + Float(analyzedActor.likeCount))/2
-
+                averages[index] = actorAverage
             } else {
                 averages.append(ActorAverage(actor: analyzedActor.actor, average: Float(analyzedActor.likeCount)))
             }
+        }
+        averages.sort { (firstActor, secondActor) -> Bool in
+            return firstActor.average > secondActor.average
         }
     }
     

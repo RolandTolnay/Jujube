@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */; };
+		2BA00F972109CCC100EDAEBF /* AnalysisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA00F962109CCC100EDAEBF /* AnalysisCell.swift */; };
 		561D13332109BEE600187283 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 561D13322109BEE600187283 /* MobileNet.mlmodel */; };
 		561D13352109C53500187283 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 561D13342109C53500187283 /* SqueezeNet.mlmodel */; };
 		56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639E82109B57C002FDB0F /* ImageProcessor.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPicAlgorithm.swift; sourceTree = "<group>"; };
+		2BA00F962109CCC100EDAEBF /* AnalysisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisCell.swift; sourceTree = "<group>"; };
 		4C902BABE7D5FDF028C0D489 /* Pods-Jujube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.release.xcconfig"; sourceTree = "<group>"; };
 		561D13322109BEE600187283 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		561D13342109C53500187283 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				AF7941042109B007001A389B /* PhotoCell.swift */,
+				2BA00F962109CCC100EDAEBF /* AnalysisCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				561D13332109BEE600187283 /* MobileNet.mlmodel in Sources */,
 				56F639EB2109B97B002FDB0F /* InstaImageProcessor.swift in Sources */,
 				AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */,
+				2BA00F972109CCC100EDAEBF /* AnalysisCell.swift in Sources */,
 				AF7941012109A805001A389B /* LoadingViewController.swift in Sources */,
 				2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */,
 				561D13352109C53500187283 /* SqueezeNet.mlmodel in Sources */,

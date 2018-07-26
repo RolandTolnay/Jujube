@@ -106,7 +106,7 @@ class MainViewController: UIViewController {
 
     let imagePicker = ImagePickerController(configuration: config)
     imagePicker.delegate = self
-    imagePicker.imageLimit = 6
+    imagePicker.imageLimit = 10
 
     present(imagePicker, animated: true, completion: nil)
   }

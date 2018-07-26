@@ -13,5 +13,6 @@ target 'Jujube' do
   pod 'SwiftInstagram', '~> 1.1.1'
   pod 'Lightbox'
   pod 'Hue'
+  pod 'SDWebImage'
 
 end

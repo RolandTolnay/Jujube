@@ -33,7 +33,7 @@ class AnalysisCell: UITableViewCell {
     private func downloadImageForActor(_ actor: String) {
         
         guard let escapedActor = actor.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
-        guard let url = URL(string: "https://www.googleapis.com/customsearch/v1?q=\(escapedActor)&searchType=image&key=AIzaSyAyW6X5Bh-JHxkYyQmcwS6URlsR-dU24xc&cx=017426432613049717893:d1u8bllqhjo") else { return }
+        guard let url = URL(string: "https://www.googleapis.com/customsearch/v1?q=\(escapedActor)&searchType=image&key=AIzaSyBKVWrglBwFdE_PHC4GOhqwgy2Mhd96Fdc&cx=017426432613049717893:d1u8bllqhjo") else { return }
         let urlSession = Foundation.URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: OperationQueue.main)
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
             if let response = response as? HTTPURLResponse {

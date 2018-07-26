@@ -67,8 +67,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-oQ-fkC">
-                                                    <rect key="frame" x="131" y="136.5" width="21.5" height="23"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
+                                                    <rect key="frame" x="132" y="137.5" width="19" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -120,6 +120,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapAccountIcon:" destination="BYZ-38-t0r" id="zfh-3F-6Ga"/>
+                                <segue destination="y1r-AL-x8j" kind="show" id="kmF-yo-jyW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -153,10 +154,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pau-JT-6BM">
-                                            <rect key="frame" x="0.0" y="0.0" width="304" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="80"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Actor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-p6-wx0">
-                                            <rect key="frame" x="16" y="26" width="53" height="26"/>
+                                            <rect key="frame" x="16" y="26" width="273" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="XPj-xJ-nIu"/>
                                             </constraints>
@@ -164,30 +165,35 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="OZI-O6-QcV">
-                                            <rect key="frame" x="309" y="14" width="50" height="50"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-love-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Eai-IV-VML">
+                                            <rect key="frame" x="329" y="25" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="0K2-kg-QtO"/>
-                                                <constraint firstAttribute="height" constant="50" id="nJQ-EZ-9Bg"/>
+                                                <constraint firstAttribute="height" constant="30" id="QIU-35-kqv"/>
+                                                <constraint firstAttribute="width" constant="30" id="wSM-3I-8U2"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAg-Dc-f8M">
-                                            <rect key="frame" x="323" y="27.5" width="21.5" height="23"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="297" y="27" width="23.5" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="J5F-0B-zgf"/>
+                                                <constraint firstAttribute="height" constant="26" id="h48-bF-XiN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="OZI-O6-QcV" firstAttribute="centerY" secondItem="3En-Wr-vhT" secondAttribute="centerY" id="FzP-67-EgV"/>
+                                        <constraint firstItem="TAg-Dc-f8M" firstAttribute="leading" secondItem="Pau-JT-6BM" secondAttribute="trailing" constant="5" id="Gq4-wR-ECi"/>
+                                        <constraint firstItem="TAg-Dc-f8M" firstAttribute="centerY" secondItem="3En-Wr-vhT" secondAttribute="centerY" id="IUi-FV-Hlo"/>
                                         <constraint firstAttribute="bottom" secondItem="Pau-JT-6BM" secondAttribute="bottom" constant="-0.5" id="IvS-4T-RpS"/>
                                         <constraint firstItem="zOY-p6-wx0" firstAttribute="centerY" secondItem="3En-Wr-vhT" secondAttribute="centerY" id="P7m-nM-TRd"/>
-                                        <constraint firstItem="OZI-O6-QcV" firstAttribute="leading" secondItem="Pau-JT-6BM" secondAttribute="trailing" constant="5" id="XL4-28-Mpv"/>
-                                        <constraint firstAttribute="trailing" secondItem="OZI-O6-QcV" secondAttribute="trailing" constant="16" id="Xrp-TW-b6X"/>
                                         <constraint firstItem="zOY-p6-wx0" firstAttribute="leading" secondItem="3En-Wr-vhT" secondAttribute="leading" constant="16" id="b0o-5W-7UU"/>
-                                        <constraint firstItem="TAg-Dc-f8M" firstAttribute="centerX" secondItem="OZI-O6-QcV" secondAttribute="centerX" id="kyN-Gm-Lqi"/>
+                                        <constraint firstItem="TAg-Dc-f8M" firstAttribute="leading" secondItem="zOY-p6-wx0" secondAttribute="trailing" constant="8" id="qfu-Mm-AP0"/>
+                                        <constraint firstItem="Eai-IV-VML" firstAttribute="centerY" secondItem="3En-Wr-vhT" secondAttribute="centerY" id="qjb-y6-UVa"/>
+                                        <constraint firstAttribute="trailing" secondItem="Eai-IV-VML" secondAttribute="trailing" constant="16" id="s4H-j2-BCX"/>
                                         <constraint firstItem="Pau-JT-6BM" firstAttribute="top" secondItem="3En-Wr-vhT" secondAttribute="top" id="tF7-Fe-wm5"/>
-                                        <constraint firstItem="TAg-Dc-f8M" firstAttribute="centerY" secondItem="OZI-O6-QcV" secondAttribute="centerY" id="v1U-My-yHv"/>
+                                        <constraint firstItem="Eai-IV-VML" firstAttribute="leading" secondItem="TAg-Dc-f8M" secondAttribute="trailing" constant="8.5" id="vkH-fK-nLb"/>
                                         <constraint firstItem="Pau-JT-6BM" firstAttribute="leading" secondItem="3En-Wr-vhT" secondAttribute="leading" id="zj7-Le-peV"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -303,8 +309,12 @@ Ignoring landscapes</string>
         </scene>
     </scenes>
     <resources>
+        <image name="facebook-love-icon" width="432" height="432"/>
         <image name="gallery" width="512" height="512"/>
         <image name="likeIcon" width="512" height="512"/>
         <image name="user-default" width="72" height="72"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kmF-yo-jyW"/>
+    </inferredMetricsTieBreakers>
 </document>

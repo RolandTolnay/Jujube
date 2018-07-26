@@ -21,11 +21,11 @@ class AnalysisCell: UITableViewCell {
         average.text = String(format: "%.f", actorAverage.average)
         average.textColor = .orange
         if actorAverage.average > (2*max)/3 {
-            average.textColor = #colorLiteral(red: 0.262835294, green: 0.8022480607, blue: 0.3886030316, alpha: 1)
+            average.textColor = #colorLiteral(red: 0.2040559649, green: 0.7372421622, blue: 0.6007294059, alpha: 1)
         } else if actorAverage.average < max/3 {
-            average.textColor = #colorLiteral(red: 0.5461038947, green: 0.2558558583, blue: 0.703636229, alpha: 1)
+            average.textColor = #colorLiteral(red: 0.8349413276, green: 0.3352985978, blue: 0.3409483433, alpha: 1)
         } else {
-            average.textColor = #colorLiteral(red: 0.9925034642, green: 0.8121734858, blue: 0, alpha: 1)
+            average.textColor = #colorLiteral(red: 0.8879843354, green: 0.5014117956, blue: 0, alpha: 1)
         }
         downloadImageForActor(actorAverage.actor)
     }

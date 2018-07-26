@@ -1,3 +1,26 @@
-PODFILE CHECKSUM: be7237a67d6379d9ba57ccbdf1d9aef096df9dfc
+PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Hero (1.2.0)
+  - ImagePicker (3.0.0)
+
+DEPENDENCIES:
+  - ChameleonFramework/Swift
+  - Hero
+  - ImagePicker
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ChameleonFramework
+    - Hero
+    - ImagePicker
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
+  ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
+
+PODFILE CHECKSUM: e71b8d852f9dcd7a2649e6341c0dde842aed5dc6
 
 COCOAPODS: 1.5.3

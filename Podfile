@@ -6,5 +6,8 @@ target 'Jujube' do
   use_frameworks!
 
   # Pods for Jujube
+  pod 'ChameleonFramework/Swift'
+  pod 'ImagePicker'
+  pod 'Hero'
 
 end

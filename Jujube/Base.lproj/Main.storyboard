@@ -119,13 +119,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Analysis" image="user-default" id="VbE-T5-cQA">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="didTapAccountIcon:" destination="BYZ-38-t0r" id="zfh-3F-6Ga"/>
-                                <segue destination="y1r-AL-x8j" kind="show" id="kmF-yo-jyW"/>
+                                <action selector="didTapAccountIcon:" destination="BYZ-38-t0r" id="3nS-4J-uD7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="accountButton" destination="VbE-T5-cQA" id="r7x-OT-JeG"/>
+                        <outlet property="accountButton" destination="VbE-T5-cQA" id="o15-Yd-f2h"/>
                         <outlet property="chooseNewPhotosButton" destination="Sdy-p6-Rm0" id="zaH-X2-cR7"/>
                         <outlet property="collectionView" destination="IR9-3D-0es" id="syr-8P-HQx"/>
                         <outlet property="galleryButton" destination="Qa7-3Q-Jcf" id="6iC-jN-iUU"/>
@@ -211,7 +210,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Actor Popularity" id="OIa-zd-7vO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="F0j-Eh-a0y"/>
-                        <barButtonItem key="rightBarButtonItem" title="Reanalyse" style="done" id="IBp-ug-bSi">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="IBp-ug-bSi">
                             <connections>
                                 <action selector="onReanalyseTapped" destination="y1r-AL-x8j" id="c8m-j0-Ui8"/>
                             </connections>
@@ -314,7 +313,4 @@ Ignoring landscapes</string>
         <image name="likeIcon" width="512" height="512"/>
         <image name="user-default" width="72" height="72"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="kmF-yo-jyW"/>
-    </inferredMetricsTieBreakers>
 </document>

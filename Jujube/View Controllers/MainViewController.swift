@@ -61,33 +61,6 @@ class MainViewController: UIViewController {
         return
       }
       
-      InstagramService.shared.userIcon(completion: { (url) in
-        
-        self.getDataFromUrl(url: url, completion: { (data) in
-
-          guard let data = data else {
-            return
-          }
-
-          guard let image = UIImage(data: data),
-            let resizedImage = self.resizeImage(image: image, newWidth: 75.0)
-            else { return }
-
-          DispatchQueue.main.sync {
-
-            let button = UIButton(type: .custom)
-            button.frame = CGRect(x: 0, y: 0, width: resizedImage.size.width, height: resizedImage.size.height)
-            button.clipsToBounds = true
-            button.setImage(resizedImage, for: .normal)
-            button.addTarget(self, action: #selector(MainViewController.onAccountIconTapped), for: .touchUpInside)
-            let barButtonItem = UIBarButtonItem(customView: button)
-            self.navigationItem.rightBarButtonItem = barButtonItem
-          }
-        })
-        
-      })
-      
-      
       let storyboard = UIStoryboard(name: "Main", bundle: nil)
       guard let vc = storyboard.instantiateViewController(withIdentifier: "loadingVC") as? LoadingViewController else {
         return
@@ -99,11 +72,6 @@ class MainViewController: UIViewController {
 
   @IBAction func didTapAccountIcon(_ sender: UIBarButtonItem) {
     
-    onAccountIconTapped()
-  }
-
-  @objc private func onAccountIconTapped() {
-
     if InstagramService.shared.isLoggedIn() {
       performSegue(withIdentifier: "accountSegue",
                    sender: self)

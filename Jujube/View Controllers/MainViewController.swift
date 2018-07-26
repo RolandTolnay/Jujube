@@ -108,6 +108,7 @@ extension MainViewController: ImagePickerDelegate {
 
   func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
 
+    analyzedImages = [AnalyzedImage]()
     images.forEach {
       analyzedImages.append(AnalyzedImage(image: $0, averageLikes: 0))
     }

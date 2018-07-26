@@ -1,9 +1,16 @@
 PODS:
+  - Cache (4.2.0)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
   - Hero (1.2.0)
+  - Hue (3.0.1)
   - ImagePicker (3.0.0)
+  - Imaginary (3.0.3):
+    - Cache (~> 4.0)
+  - Lightbox (2.1.2):
+    - Hue (~> 3.0)
+    - Imaginary (~> 3.0)
   - SwiftInstagram (1.1.1):
     - SwiftInstagram/Core (= 1.1.1)
   - SwiftInstagram/Core (1.1.1)
@@ -11,13 +18,19 @@ PODS:
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Hero
+  - Hue
   - ImagePicker
+  - Lightbox
   - SwiftInstagram (~> 1.1.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Cache
     - Hero
+    - Hue
     - ImagePicker
+    - Imaginary
+    - Lightbox
     - SwiftInstagram
 
 EXTERNAL SOURCES:
@@ -30,11 +43,15 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
+  Cache: f28f8dd64b632155aabf9b3906b036a659048251
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
+  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
+  Imaginary: 9b45836a5af881f452a86e0a1215772ae4712d00
+  Lightbox: 2dc267df8be2285bc7724cb11cbbf4aaaf59dced
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
 
-PODFILE CHECKSUM: ebc7a5aa82ce33443696c1dba45f9af300aeda91
+PODFILE CHECKSUM: 47ddc66c2b44b6fc8d76f54448e2008144d027a3
 
 COCOAPODS: 1.5.3

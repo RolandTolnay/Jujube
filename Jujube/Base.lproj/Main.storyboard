@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-3D-0es">
-                                <rect key="frame" x="0.0" y="116" width="375" height="487"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WiH-FA-fDh">
                                     <size key="itemSize" width="182" height="182"/>
@@ -83,7 +83,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sdy-p6-Rm0" secondAttribute="bottom" constant="16" id="I8l-DB-NeN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IR9-3D-0es" secondAttribute="trailing" id="KcA-qG-VeD"/>
                             <constraint firstItem="IR9-3D-0es" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SZi-Ka-dfY"/>
-                            <constraint firstItem="IR9-3D-0es" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mKI-Qf-wFs"/>
+                            <constraint firstItem="IR9-3D-0es" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="mKI-Qf-wFs"/>
                             <constraint firstItem="Sdy-p6-Rm0" firstAttribute="top" secondItem="IR9-3D-0es" secondAttribute="bottom" constant="16" id="siu-vo-dke"/>
                             <constraint firstItem="Sdy-p6-Rm0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wh2-dL-7bT"/>
                         </constraints>

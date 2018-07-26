@@ -1,0 +1,9 @@
+*.mode1v3
+*.perspectivev3
+*.pbxuser
+.DS_Store
+build/
+Jujube.xcodeproj/project.xcworkspace/xcuserdata
+Jujube.xcodeproj/xcuserdata
+Jujube.xcworkspace/xcuserdata
+Pods/

@@ -13,10 +13,19 @@ class PhotoCell: UICollectionViewCell {
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var likesLabel: UILabel!
 
+  override func layoutSubviews() {
+    super.layoutSubviews()
+
+    imageView.clipsToBounds = true
+    imageView.layer.cornerRadius = 5
+  }
+
   func setup(with image: UIImage,
              estimatedLikes: Float?) {
 
     imageView.image = image
-    likesLabel.text = "Estimated likes: \(estimatedLikes ?? 0)"
+
+    let likes = Int(estimatedLikes ?? 0)
+    likesLabel.text = "\(likes)"
   }
 }

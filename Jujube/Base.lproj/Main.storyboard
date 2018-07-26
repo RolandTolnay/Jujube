@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,42 +18,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-3D-0es">
-                                <rect key="frame" x="0.0" y="132" width="375" height="471"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdy-p6-Rm0">
+                                <rect key="frame" x="128.5" y="619" width="117" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Choose photos">
+                                    <color key="titleColor" red="0.76089900730000004" green="0.25649610160000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onChoosePhotosTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQk-Ga-EZx"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-3D-0es">
+                                <rect key="frame" x="6" y="132" width="363" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WiH-FA-fDh">
-                                    <size key="itemSize" width="182" height="182"/>
+                                    <size key="itemSize" width="176" height="182"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="9vp-Mh-DxY" customClass="PhotoCell" customModule="Jujube" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="176" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPS-xf-DMT">
-                                                    <rect key="frame" x="40" y="0.0" width="102" height="144"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPS-xf-DMT">
+                                                    <rect key="frame" x="6" y="40" width="164" height="136"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated likes: 99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-oQ-fkC">
-                                                    <rect key="frame" x="13" y="156" width="156" height="14"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likes" translatesAutoresizingMaskIntoConstraints="NO" id="sDz-Ky-mq6">
+                                                    <rect key="frame" x="64.5" y="4" width="47" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="47" id="gEF-TK-vPJ"/>
+                                                        <constraint firstAttribute="height" constant="32" id="ihq-rz-V1R"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-oQ-fkC">
+                                                    <rect key="frame" x="94" y="10.5" width="12.5" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="wPS-xf-DMT" secondAttribute="trailing" constant="40" id="43T-iM-BOw"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="BWO-oQ-fkC" secondAttribute="trailing" constant="5" id="VCT-GJ-ju6"/>
-                                            <constraint firstItem="wPS-xf-DMT" firstAttribute="leading" secondItem="9vp-Mh-DxY" secondAttribute="leading" constant="40" id="dSq-NA-lLP"/>
-                                            <constraint firstItem="BWO-oQ-fkC" firstAttribute="leading" secondItem="9vp-Mh-DxY" secondAttribute="leadingMargin" constant="5" id="faQ-MV-yQV"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="BWO-oQ-fkC" secondAttribute="bottom" constant="4" id="hbg-ln-6Gb"/>
-                                            <constraint firstItem="wPS-xf-DMT" firstAttribute="top" secondItem="9vp-Mh-DxY" secondAttribute="top" id="lGR-AQ-2Xf"/>
-                                            <constraint firstItem="BWO-oQ-fkC" firstAttribute="top" secondItem="wPS-xf-DMT" secondAttribute="bottom" constant="12" id="zDP-9s-d9i"/>
+                                            <constraint firstItem="wPS-xf-DMT" firstAttribute="leading" secondItem="9vp-Mh-DxY" secondAttribute="leading" constant="6" id="3hb-x8-gwn"/>
+                                            <constraint firstItem="BWO-oQ-fkC" firstAttribute="centerY" secondItem="sDz-Ky-mq6" secondAttribute="centerY" constant="-3" id="8y8-KY-uxI"/>
+                                            <constraint firstItem="sDz-Ky-mq6" firstAttribute="top" secondItem="9vp-Mh-DxY" secondAttribute="top" constant="4" id="BX3-VA-JC9"/>
+                                            <constraint firstItem="wPS-xf-DMT" firstAttribute="top" secondItem="sDz-Ky-mq6" secondAttribute="bottom" constant="4" id="RFm-yS-2AK"/>
+                                            <constraint firstItem="sDz-Ky-mq6" firstAttribute="centerX" secondItem="9vp-Mh-DxY" secondAttribute="centerX" id="TsS-Qw-tHM"/>
+                                            <constraint firstAttribute="bottom" secondItem="wPS-xf-DMT" secondAttribute="bottom" constant="6" id="ing-mG-UW7"/>
+                                            <constraint firstItem="BWO-oQ-fkC" firstAttribute="centerX" secondItem="sDz-Ky-mq6" secondAttribute="centerX" constant="12" id="muz-ad-Iax"/>
+                                            <constraint firstAttribute="trailing" secondItem="wPS-xf-DMT" secondAttribute="trailing" constant="6" id="w1q-36-7FA"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="wPS-xf-DMT" id="hGu-Ck-hfY"/>
@@ -67,22 +84,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lJp-AN-64e"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdy-p6-Rm0">
-                                <rect key="frame" x="128.5" y="619" width="117" height="32"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Choose photos">
-                                    <color key="titleColor" red="0.76089900730000004" green="0.25649610160000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="onChoosePhotosTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQk-Ga-EZx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sdy-p6-Rm0" secondAttribute="bottom" constant="16" id="I8l-DB-NeN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IR9-3D-0es" secondAttribute="trailing" id="KcA-qG-VeD"/>
-                            <constraint firstItem="IR9-3D-0es" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SZi-Ka-dfY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IR9-3D-0es" secondAttribute="trailing" constant="6" id="KcA-qG-VeD"/>
+                            <constraint firstItem="IR9-3D-0es" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="SZi-Ka-dfY"/>
                             <constraint firstItem="IR9-3D-0es" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="mKI-Qf-wFs"/>
                             <constraint firstItem="Sdy-p6-Rm0" firstAttribute="top" secondItem="IR9-3D-0es" secondAttribute="bottom" constant="16" id="siu-vo-dke"/>
                             <constraint firstItem="Sdy-p6-Rm0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wh2-dL-7bT"/>
@@ -160,6 +167,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="likes" width="1222" height="896"/>
         <image name="user-default" width="512" height="512"/>
     </resources>
 </document>

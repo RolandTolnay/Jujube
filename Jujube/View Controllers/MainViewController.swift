@@ -151,7 +151,7 @@ extension MainViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-    let image = analyzedImages[indexPath.row].image
+    let image = state.currentImages[indexPath.row].image
     openInstagram(with: image)
   }
 }

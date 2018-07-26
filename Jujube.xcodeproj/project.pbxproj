@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2B041C7F2109B199009F0CD4 /* BestPicAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B041C7E2109B199009F0CD4 /* BestPicAlgorithm.swift */; };
-		56F49AAB2109CEBA00A39B68 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56F49AAA2109CEBA00A39B68 /* Resnet50.mlmodel */; };
 		2BA00F972109CCC100EDAEBF /* AnalysisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA00F962109CCC100EDAEBF /* AnalysisCell.swift */; };
+		56F49AAB2109CEBA00A39B68 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56F49AAA2109CEBA00A39B68 /* Resnet50.mlmodel */; };
 		56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639E82109B57C002FDB0F /* ImageProcessor.swift */; };
 		56F639EB2109B97B002FDB0F /* InstaImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639EA2109B97B002FDB0F /* InstaImageProcessor.swift */; };
 		689157AB2109B9A0003AB7E9 /* InstagramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689157AA2109B9A0003AB7E9 /* InstagramService.swift */; };

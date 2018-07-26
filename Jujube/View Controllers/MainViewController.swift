@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
   let instaService = InstagramService()
+  var documentController: UIDocumentInteractionController!
 
   private var analyzedImages = [AnalyzedImage]()
 
@@ -60,6 +61,40 @@ class MainViewController: UIViewController {
 
     present(imagePicker, animated: true, completion: nil)
   }
+  
+  func openInstagram(with image: UIImage) {
+    
+    DispatchQueue.main.async {
+      
+      //Share To Instagram:
+      let instagramURL = URL(string: "instagram://app")
+      if UIApplication.shared.canOpenURL(instagramURL!) {
+        
+        let imageData = UIImageJPEGRepresentation(image, 100)
+        let writePath = (NSTemporaryDirectory() as NSString).appendingPathComponent("instagram.igo")
+        
+        do {
+          try imageData?.write(to: URL(fileURLWithPath: writePath), options: .atomic)
+        } catch {
+          print(error)
+        }
+        
+        let fileURL = URL(fileURLWithPath: writePath)
+        self.documentController = UIDocumentInteractionController(url: fileURL)
+        self.documentController.delegate = self
+        self.documentController.uti = "com.instagram.exclusivegram"
+        self.documentController.presentOpenInMenu(from: self.view.bounds,
+                                                  in: self.view,
+                                                  animated: true)
+      } else {
+        print(" Instagram is not installed ")
+      }
+    }
+  }
+}
+
+extension MainViewController: UIDocumentInteractionControllerDelegate {
+  
 }
 
 extension MainViewController: UICollectionViewDataSource {
@@ -85,7 +120,8 @@ extension MainViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-    // TODO: Try to upload photo to instagram
+    let image = analyzedImages[indexPath.row].image
+    openInstagram(with: image)
   }
 }
 

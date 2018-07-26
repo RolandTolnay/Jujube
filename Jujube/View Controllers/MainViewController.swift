@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import SwiftInstagram
 
 class MainViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
+  let instaService = InstagramService()
 
   private var analyzedImages: [AnalyzedImage] = [
     AnalyzedImage(image: UIImage(), averageLikes: 0.0)
@@ -25,23 +25,20 @@ class MainViewController: UIViewController {
   
   private func presentLogin() {
     
-    let api = Instagram.shared
-    
     guard let navigationController = navigationController else {
       return
     }
     
-    api.login(from: navigationController, success: {
-      api.recentMedia(fromUser: "self", count: 20, success: { mediaList in
-        
-        print(mediaList)
-        
-      }, failure: { error in
-        print("Could not fetch user media with error: \(error.localizedDescription)")
+    instaService.login(navigationController: navigationController) { (success) in
+      
+      guard success else {
+        return
+      }
+      
+      self.instaService.latestImages(completion: { (data) in
+        print("adsad")
       })
-    }, failure: { error in
-      print("Could not login with error: \(error.localizedDescription)")
-    })
+    }
   }
 
 

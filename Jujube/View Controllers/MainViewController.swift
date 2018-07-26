@@ -33,6 +33,8 @@ class MainViewController: UIViewController {
   @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
   var documentController: UIDocumentInteractionController!
 
+  @IBOutlet weak var chooseNewPhotosButton: UIButton!
+  @IBOutlet weak var galleryButton: UIButton!
   private let instaService = InstagramService()
 
   private var state: State = .empty
@@ -42,6 +44,9 @@ class MainViewController: UIViewController {
 
     presentLogin()
     setupBestPicAlgorithm()
+    collectionView.isHidden = true
+    chooseNewPhotosButton.isHidden = true
+    galleryButton.isHidden = false
   }
 
   // TODO: Remove this after profile analyzer complete
@@ -78,6 +83,16 @@ class MainViewController: UIViewController {
     }
   }
 
+  @IBAction func didTapAccountIcon(_ sender: UIBarButtonItem) {
+    
+    if instaService.isLoggedIn() {
+      performSegue(withIdentifier: "accountSegue",
+                   sender: self)
+    } else {
+      presentLogin()
+    }
+    
+  }
   @IBAction func onChoosePhotosTapped(_ sender: Any) {
 
     var config = Configuration()
@@ -112,7 +127,6 @@ class MainViewController: UIViewController {
         
         let fileURL = URL(fileURLWithPath: writePath)
         self.documentController = UIDocumentInteractionController(url: fileURL)
-        self.documentController.delegate = self
         self.documentController.uti = "com.instagram.exclusivegram"
         self.documentController.presentOpenInMenu(from: self.view.bounds,
                                                   in: self.view,
@@ -122,10 +136,6 @@ class MainViewController: UIViewController {
       }
     }
   }
-}
-
-extension MainViewController: UIDocumentInteractionControllerDelegate {
-  
 }
 
 extension MainViewController: UICollectionViewDataSource {
@@ -153,6 +163,25 @@ extension MainViewController: UICollectionViewDelegate {
 
     let image = state.currentImages[indexPath.row].image
     openInstagram(with: image)
+  }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+    guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
+      return CGSize.zero
+    }
+    
+    let itemSpacing = flowLayout.minimumInteritemSpacing *
+      CGFloat(2 - 1) +
+      flowLayout.sectionInset.left +
+      flowLayout.sectionInset.right
+    
+    let width = (collectionView.bounds.width - itemSpacing) / 2.0
+    
+    return CGSize(width: width, height: 200)
   }
 }
 
@@ -187,6 +216,10 @@ extension MainViewController: ImagePickerDelegate {
       self.state = .populated(images: analyzedImages)
       self.loadingIndicator.stopAnimating()
       self.collectionView.reloadData()
+      
+      self.collectionView.isHidden = false
+      self.chooseNewPhotosButton.isHidden = false
+      self.galleryButton.isHidden = true
     }
   }
 }

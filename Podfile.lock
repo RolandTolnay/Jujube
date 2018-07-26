@@ -17,6 +17,7 @@ PODS:
   - SwiftInstagram (1.1.1):
     - SwiftInstagram/Core (= 1.1.1)
   - SwiftInstagram/Core (1.1.1)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - Lightbox
   - SDWebImage
   - SwiftInstagram (~> 1.1.1)
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -37,6 +39,7 @@ SPEC REPOS:
     - Lightbox
     - SDWebImage
     - SwiftInstagram
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -57,7 +60,8 @@ SPEC CHECKSUMS:
   Lightbox: 2dc267df8be2285bc7724cb11cbbf4aaaf59dced
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 02bcb8171b31d3e967a3845d6077ff8f095a471f
+PODFILE CHECKSUM: 1f88a65de7cbcf4d7707be312bf902e30e981c6e
 
 COCOAPODS: 1.5.3

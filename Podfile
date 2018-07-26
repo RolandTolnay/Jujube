@@ -14,5 +14,6 @@ target 'Jujube' do
   pod 'Lightbox'
   pod 'Hue'
   pod 'SDWebImage'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end

@@ -64,8 +64,6 @@ class SlidingText : UIView{
         }
     }
     
-    
-    
     @IBInspectable var timeToSlide: Double = 1.5 {
         didSet {
             timer?.invalidate()

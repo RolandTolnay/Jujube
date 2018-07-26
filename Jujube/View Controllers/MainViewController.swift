@@ -61,7 +61,7 @@ class MainViewController: UIViewController {
         return
       }
       
-      self.instaService.userIcon(completion: { (url) in
+      InstagramService.shared.userIcon(completion: { (url) in
         
         self.getDataFromUrl(url: url,
                             completion: { (data) in

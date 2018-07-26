@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639E82109B57C002FDB0F /* ImageProcessor.swift */; };
 		AF6F21AC2109B0BB0055B99E /* Cell+convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21AB2109B0BB0055B99E /* Cell+convenience.swift */; };
 		AF6F21AE2109B4C60055B99E /* InstaActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21AD2109B4C60055B99E /* InstaActor.swift */; };
 		AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940EB2109A025001A389B /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		4C902BABE7D5FDF028C0D489 /* Pods-Jujube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.release.xcconfig"; sourceTree = "<group>"; };
+		56F639E82109B57C002FDB0F /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		850AF28C01FE5D218A30CF1D /* Pods-Jujube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.debug.xcconfig"; sourceTree = "<group>"; };
 		AF6F21AB2109B0BB0055B99E /* Cell+convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cell+convenience.swift"; sourceTree = "<group>"; };
 		AF6F21AD2109B4C60055B99E /* InstaActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaActor.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56F639E72109B556002FDB0F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				56F639E82109B57C002FDB0F /* ImageProcessor.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		737CADAD5DB99AEFD8B5B59F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,13 +108,15 @@
 			children = (
 				AF7940EB2109A025001A389B /* AppDelegate.swift */,
 				AF6F21AF2109B4CB0055B99E /* Model */,
-				AF7941032109AFD9001A389B /* View */,
 				AF7941022109AFC4001A389B /* View Controllers */,
 				AF7941092109B090001A389B /* Extensions */,
-				AF7940EF2109A025001A389B /* Main.storyboard */,
+				56F639E72109B556002FDB0F /* Service */,
+				AF7941032109AFD9001A389B /* View */,
+				AF7941022109AFC4001A389B /* View Controllers */,
 				AF7940F22109A026001A389B /* Assets.xcassets */,
-				AF7940F42109A026001A389B /* LaunchScreen.storyboard */,
 				AF7940F72109A026001A389B /* Info.plist */,
+				AF7940F42109A026001A389B /* LaunchScreen.storyboard */,
+				AF7940EF2109A025001A389B /* Main.storyboard */,
 			);
 			path = Jujube;
 			sourceTree = "<group>";
@@ -148,6 +160,7 @@
 				AF7940E62109A025001A389B /* Resources */,
 				AF7940FD2109A0FF001A389B /* Swiftlint */,
 				C650FBC0A6A417E7C2169623 /* [CP] Embed Pods Frameworks */,
+				44FA24E0DA62042CA32776F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +218,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		44FA24E0DA62042CA32776F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jujube/Pods-Jujube-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		978EBE4B82A4D8F526E4BDA5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,6 +301,7 @@
 				AF6F21AE2109B4C60055B99E /* InstaActor.swift in Sources */,
 				AF7941052109B007001A389B /* PhotoCell.swift in Sources */,
 				AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */,
+				56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */,
 				AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */,
 				AF7941012109A805001A389B /* LoadingViewController.swift in Sources */,
 			);

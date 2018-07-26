@@ -24,6 +24,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+  <key>InstagramClientId</key>
+  <string>fb7a3b11f443472bbc3efa5b1df179ea</string>
+  <key>InstagramRedirectURI</key>
+  <string>https://www.google.com</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

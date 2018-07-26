@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftInstagram
 
 class MainViewController: UIViewController {
 
@@ -17,24 +18,28 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    presentLogin()
   }
-
-}
-
-extension MainViewController: UICollectionViewDataSource {
-
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-    return 6
-  }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-    guard let cell = collectionView.dequeueReusableCell(with: PhotoCell.self, for: indexPath)
-      else { return UICollectionViewCell() }
-
-
-    return cell
+  
+  private func presentLogin() {
+    
+    let api = Instagram.shared
+    
+    guard let navigationController = navigationController else {
+      return
+    }
+    
+    api.login(from: navigationController, success: {
+      api.recentMedia(fromUser: "self", count: 20, success: { mediaList in
+        
+        print(mediaList)
+        
+      }, failure: { error in
+        print("Could not fetch user media with error: \(error.localizedDescription)")
+      })
+    }, failure: { error in
+      print("Could not login with error: \(error.localizedDescription)")
+    })
   }
 }
 

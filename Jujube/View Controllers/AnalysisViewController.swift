@@ -22,6 +22,8 @@ class AnalysisViewController: UITableViewController {
         maxLikes = $0.average
       }
     }
+    
+    tableView.reloadData()
   }
     
     @IBAction func onReanalyseTapped() {

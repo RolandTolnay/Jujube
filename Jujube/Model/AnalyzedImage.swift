@@ -11,5 +11,5 @@ import UIKit
 struct AnalyzedImage {
 
   let image: UIImage
-  let averageLikes: Float
+  let averageLikes: Float?
 }

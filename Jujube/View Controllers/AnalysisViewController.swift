@@ -11,12 +11,21 @@ import UIKit
 class AnalysisViewController: UITableViewController {
 
     var actorAverages = [ActorAverage]()
+    var maxLikes: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        actorAverages = BestPicAlgorithm.shared.getAnalysisResults()
+        actorAverages.forEach {
+            if $0.average > maxLikes {
+                maxLikes = $0.average
+            }
+        }
+    }
+    
+    @IBAction func onDoneTapped() {
         
-        BestPicAlgorithm.shared.setup(withActors: [AnalyzedActor(actor: "Phone", likeCount: 10), AnalyzedActor(actor: "Selfie", likeCount: 15), AnalyzedActor(actor: "Car", likeCount: 24), AnalyzedActor(actor: "Car", likeCount: 21)])
-        actorAverages = BestPicAlgorithm.shared.getAnalysisResults() //[ActorAverage(actor: "Phone", average: 10), ActorAverage(actor: "Selfie", average: 15), ActorAverage(actor: "Car", average: 25)]
+        dismiss(animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,7 +36,7 @@ class AnalysisViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(with: AnalysisCell.self) {
-            cell.setup(with: actorAverages[indexPath.row])
+            cell.setup(with: actorAverages[indexPath.row], forMaxLikes: maxLikes)
             return cell
         }
         return UITableViewCell()

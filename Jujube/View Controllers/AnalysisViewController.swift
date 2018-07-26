@@ -12,16 +12,17 @@ class AnalysisViewController: UITableViewController {
 
     var actorAverages = [ActorAverage]()
     var maxLikes: Float = 0.0
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        actorAverages = BestPicAlgorithm.shared.getAnalysisResults()
-        actorAverages.forEach {
-            if $0.average > maxLikes {
-                maxLikes = $0.average
-            }
-        }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    actorAverages = BestPicAlgorithm.shared.getAnalysisResults()
+    actorAverages.forEach {
+      if $0.average > maxLikes {
+        maxLikes = $0.average
+      }
     }
+  }
     
     @IBAction func onReanalyseTapped() {
         

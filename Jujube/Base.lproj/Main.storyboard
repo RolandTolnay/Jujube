@@ -96,9 +96,20 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lJp-AN-64e"/>
                                 </connections>
                             </collectionView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hi4-C0-J97">
-                                <rect key="frame" x="275" y="625" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLQ-xB-anK" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="157" y="303.5" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Aja-77-MOl"/>
+                                    <constraint firstAttribute="width" constant="60" id="CLm-Rs-xgd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.76089900730000004" green="0.25649610160000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballSpinFadeLoader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -107,10 +118,10 @@
                             <constraint firstItem="IR9-3D-0es" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="SZi-Ka-dfY"/>
                             <constraint firstItem="Qa7-3Q-Jcf" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Tnt-Na-CfS"/>
                             <constraint firstItem="Qa7-3Q-Jcf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="beF-3o-Ijx"/>
+                            <constraint firstItem="bLQ-xB-anK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ket-Ws-JeL"/>
                             <constraint firstItem="IR9-3D-0es" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="mKI-Qf-wFs"/>
-                            <constraint firstItem="hi4-C0-J97" firstAttribute="centerY" secondItem="Sdy-p6-Rm0" secondAttribute="centerY" id="pmZ-PY-Vtr"/>
-                            <constraint firstItem="hi4-C0-J97" firstAttribute="leading" secondItem="Sdy-p6-Rm0" secondAttribute="trailing" constant="8" id="riv-O2-6jf"/>
                             <constraint firstItem="Sdy-p6-Rm0" firstAttribute="top" secondItem="IR9-3D-0es" secondAttribute="bottom" constant="16" id="siu-vo-dke"/>
+                            <constraint firstItem="bLQ-xB-anK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wDR-zg-Ttc"/>
                             <constraint firstItem="Sdy-p6-Rm0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wh2-dL-7bT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -134,7 +145,7 @@
                         <outlet property="chooseNewPhotosButton" destination="Sdy-p6-Rm0" id="zaH-X2-cR7"/>
                         <outlet property="collectionView" destination="IR9-3D-0es" id="syr-8P-HQx"/>
                         <outlet property="galleryButton" destination="Qa7-3Q-Jcf" id="6iC-jN-iUU"/>
-                        <outlet property="loadingIndicator" destination="hi4-C0-J97" id="6YY-38-wox"/>
+                        <outlet property="loadingIndicator" destination="bLQ-xB-anK" id="Zsj-Jp-WGS"/>
                         <segue destination="y1r-AL-x8j" kind="show" identifier="accountSegue" id="0bo-Nf-s8C"/>
                     </connections>
                 </viewController>

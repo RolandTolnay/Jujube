@@ -22,10 +22,13 @@ class InstaImageProcessor {
         createRequest(with: binaryImageData, completion: completion)
     }
     
-    func processImages(images: [UIImage], completion: @escaping ([IdentifiedImage]) -> ()) {
+    func processImages(images: [UIImage?], completion: @escaping ([IdentifiedImage]) -> ()) {
         let dispatchGroup = DispatchGroup()
         var result = [IdentifiedImage]()
         for image in images {
+
+          if let image = image {
+
             let imageData = UIImagePNGRepresentation(image) ?? Data()
             dispatchGroup.enter()
             processImage(image: imageData) { classificationIdentifiers in
@@ -33,6 +36,8 @@ class InstaImageProcessor {
               result.append(identifiedImage)
               dispatchGroup.leave()
             }
+          }
+
         }
         dispatchGroup.notify(queue: DispatchQueue.main) {
             completion(result)

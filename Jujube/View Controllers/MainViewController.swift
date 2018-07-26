@@ -10,6 +10,7 @@ import UIKit
 import SwiftInstagram
 import ImagePicker
 import Lightbox
+import SDWebImage
 
 class MainViewController: UIViewController {
 
@@ -33,6 +34,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
   var documentController: UIDocumentInteractionController!
 
+  @IBOutlet weak var accountButton: UIBarButtonItem!
   @IBOutlet weak var chooseNewPhotosButton: UIButton!
   @IBOutlet weak var galleryButton: UIButton!
 
@@ -58,6 +60,25 @@ class MainViewController: UIViewController {
       guard success else {
         return
       }
+      
+      self.instaService.userIcon(completion: { (url) in
+        
+        self.getDataFromUrl(url: url,
+                            completion: { (data) in
+          guard let data = data else {
+            return
+          }
+          
+          let image = UIImage(data: data)
+          let resizedImage = self.resizeImage(image: image!, newWidth: 75.0)
+          
+              DispatchQueue.main.sync {
+                self.accountButton.image = resizedImage
+              }
+        })
+        
+      })
+      
       
       let storyboard = UIStoryboard(name: "Main", bundle: nil)
       guard let vc = storyboard.instantiateViewController(withIdentifier: "loadingVC") as? LoadingViewController else {
@@ -206,5 +227,26 @@ extension MainViewController: ImagePickerDelegate {
       self.chooseNewPhotosButton.isHidden = false
       self.galleryButton.isHidden = true
     }
+  }
+  
+  func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+    
+    let scale = newWidth / image.size.width
+    let newHeight = image.size.height * scale
+    UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+    image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+    
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return newImage
+  }
+  
+  func getDataFromUrl(url: URL,
+                      completion: @escaping (_ data: Data?) -> Void) {
+    
+    URLSession.shared.dataTask(with: url) { (data, _, _) in
+      completion(data)
+      }.resume()
   }
 }

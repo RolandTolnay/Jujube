@@ -18,6 +18,12 @@ class InstagramService {
                                               qos: .background,
                                               attributes: .concurrent)
   
+  func userIcon(completion: @escaping (_ profileURL: URL) -> Void) {
+    api.user("self", success: { (user) in
+      completion(user.profilePicture)
+    }, failure: nil)
+  }
+  
   func isLoggedIn() -> Bool {
     
     return api.isAuthenticated
@@ -49,9 +55,10 @@ class InstagramService {
                                 completion: { (data) in
                                   
                                   if let data = data {
-                                    
+                                    debugPrint("Starting for: " + media.link.absoluteString)
                                     self.imageProcessor.processImage(image: data,
                                                                      completion: { (actor) in
+                                                                        debugPrint("Finished for: " + media.link.absoluteString)
                                                                       if let actor = actor  {
                                                                         let analyzedActor = AnalyzedActor(actor: actor,
                                                                                                           likeCount: media.likes.count)
@@ -68,7 +75,7 @@ class InstagramService {
           }
         }
         
-        requestsGroup.notify(queue: self.concurrentQueue, execute: {
+        requestsGroup.notify(queue: DispatchQueue.main, execute: {
           completion(analyzedActors)
         })
       }, failure: { error in

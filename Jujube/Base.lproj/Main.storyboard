@@ -125,6 +125,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="accountButton" destination="VbE-T5-cQA" id="r7x-OT-JeG"/>
                         <outlet property="chooseNewPhotosButton" destination="Sdy-p6-Rm0" id="zaH-X2-cR7"/>
                         <outlet property="collectionView" destination="IR9-3D-0es" id="syr-8P-HQx"/>
                         <outlet property="galleryButton" destination="Qa7-3Q-Jcf" id="6iC-jN-iUU"/>
@@ -311,7 +312,7 @@ Ignoring landscapes</string>
         <image name="facebook-love-icon" width="432" height="432"/>
         <image name="gallery" width="512" height="512"/>
         <image name="likeIcon" width="512" height="512"/>
-        <image name="user-default" width="512" height="512"/>
+        <image name="user-default" width="72" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kmF-yo-jyW"/>

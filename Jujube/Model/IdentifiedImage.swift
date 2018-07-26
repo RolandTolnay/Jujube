@@ -11,7 +11,7 @@ import UIKit
 struct IdentifiedImage: CustomStringConvertible {
 
   let image: UIImage
-  let actor: String
+  let actor: [String]
 
   var description: String {
 

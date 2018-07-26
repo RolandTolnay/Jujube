@@ -5,12 +5,10 @@
 
 import Foundation
 import UIKit
-import CoreML
-import Vision
 import SwiftyJSON
 
 
-class InstaImageProcessor: ImageProcessor {
+class InstaImageProcessor {
     
     private let session = URLSession.shared
     private let googleAPIKey = "AIzaSyCGQleyq_4KkUCZ2qI4w7bGLcjmJ2GVpm4"
@@ -18,8 +16,8 @@ class InstaImageProcessor: ImageProcessor {
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(googleAPIKey)")!
     }
     
-    func processImage(image: Data, completion: @escaping (String?) -> ()) {
-        guard let uiImage = UIImage(data: image) else { return completion(nil) }
+    func processImage(image: Data, completion: @escaping ([String]) -> ()) {
+        guard let uiImage = UIImage(data: image) else { return completion([]) }
         let binaryImageData = base64EncodeImage(uiImage)
         createRequest(with: binaryImageData, completion: completion)
     }
@@ -30,10 +28,10 @@ class InstaImageProcessor: ImageProcessor {
         for image in images {
             let imageData = UIImagePNGRepresentation(image) ?? Data()
             dispatchGroup.enter()
-            processImage(image: imageData) { classificationIdentifier in
-                let identifiedImage = IdentifiedImage(image: image, actor: classificationIdentifier ?? "")
-                result.append(identifiedImage)
-                dispatchGroup.leave()
+            processImage(image: imageData) { classificationIdentifiers in
+              let identifiedImage = IdentifiedImage(image: image, actor: classificationIdentifiers)
+              result.append(identifiedImage)
+              dispatchGroup.leave()
             }
         }
         dispatchGroup.notify(queue: DispatchQueue.main) {
@@ -63,7 +61,7 @@ class InstaImageProcessor: ImageProcessor {
         return imagedata!.base64EncodedString(options: .endLineWithCarriageReturn)
     }
     
-    func createRequest(with imageBase64: String, completion: @escaping (String?) -> ()) {
+    func createRequest(with imageBase64: String, completion: @escaping ([String]) -> ()) {
         // Create our request URL
         
         var request = URLRequest(url: googleURL)
@@ -89,7 +87,7 @@ class InstaImageProcessor: ImageProcessor {
         
         // Serialize the JSON
         guard let data = try? jsonObject.rawData() else {
-            completion(nil)
+            completion([])
             return
         }
         
@@ -101,13 +99,13 @@ class InstaImageProcessor: ImageProcessor {
         }
     }
     
-    func runRequestOnBackgroundThread(_ request: URLRequest, completion: @escaping (String?) -> ()) {
+    func runRequestOnBackgroundThread(_ request: URLRequest, completion: @escaping ([String]) -> ()) {
         // run the request
         
         let task: URLSessionDataTask = session.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "")
-                completion(nil)
+                completion([])
                 return
             }
             
@@ -117,7 +115,7 @@ class InstaImageProcessor: ImageProcessor {
         task.resume()
     }
     
-    func analyzeResults(_ dataToParse: Data, completion: @escaping (String?) -> ()) {
+    func analyzeResults(_ dataToParse: Data, completion: @escaping ([String]) -> ()) {
         
         // Update UI on the main thread
         DispatchQueue.main.async(execute: {
@@ -130,7 +128,7 @@ class InstaImageProcessor: ImageProcessor {
             // Check for errors
             if (errorObj.dictionaryValue != [:]) {
                 debugPrint("Error code \(errorObj["code"]): \(errorObj["message"])")
-                completion(nil)
+                completion([])
             } else {
                 // Parse the response
                 let responses: JSON = json["responses"][0]
@@ -145,10 +143,10 @@ class InstaImageProcessor: ImageProcessor {
                         labels.append(label)
                     }
                     debugPrint(labels)
-                    completion(labels.first)
+                    completion(labels)
                 } else {
                     debugPrint("No labels found")
-                    completion(nil)
+                    completion([])
                 }
             }
         })

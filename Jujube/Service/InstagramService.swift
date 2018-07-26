@@ -63,15 +63,16 @@ class InstagramService {
                                   if let data = data {
                                     debugPrint("Starting for: " + media.link.absoluteString)
                                     self.imageProcessor.processImage(image: data,
-                                                                     completion: { (actor) in
+                                                                     completion: { actors in
                                                                         debugPrint("Finished for: " + media.link.absoluteString)
-                                                                      if let actor = actor  {
+                                                                      
+                                                                      for actor in actors {
                                                                         let analyzedActor = AnalyzedActor(actor: actor,
                                                                                                           likeCount: media.likes.count)
                                                                         analyzedActors.append(analyzedActor)
-                                                                        print("Actor: \(actor) for media: \(media.link)")
                                                                       }
                                                                       
+                                                                      print("Actor: \(actors) for media: \(media.link)")
                                                                       requestsGroup.leave()
                                     })
                                   } else {

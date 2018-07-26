@@ -46,7 +46,7 @@ class BestPicAlgorithm {
         var analyzedImages = [AnalyzedImage]()
         images.forEach { image in
             let actorAverage = averages.first(where: {
-                return $0.actor == image.actor
+                return image.actor.contains($0.actor)
             })
             analyzedImages.append(AnalyzedImage(image: image.image, averageLikes: actorAverage?.average))
         }

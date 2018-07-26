@@ -9,5 +9,6 @@ target 'Jujube' do
   pod 'ChameleonFramework/Swift'
   pod 'ImagePicker'
   pod 'Hero'
+  pod 'SwiftInstagram', '~> 1.1.1'
 
 end

@@ -14,9 +14,9 @@ class PhotoCell: UICollectionViewCell {
   @IBOutlet weak var likesLabel: UILabel!
 
   func setup(with image: UIImage,
-             estimatedLikes: Int) {
+             estimatedLikes: Float?) {
 
     imageView.image = image
-    likesLabel.text = "Estimated likes: \(estimatedLikes)"
+    likesLabel.text = "Estimated likes: \(estimatedLikes ?? 0)"
   }
 }

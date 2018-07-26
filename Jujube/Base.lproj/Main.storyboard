@@ -120,6 +120,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapAccountIcon:" destination="BYZ-38-t0r" id="zfh-3F-6Ga"/>
+                                <segue destination="y1r-AL-x8j" kind="show" id="kmF-yo-jyW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,7 +139,7 @@
         <!--Actor Popularity-->
         <scene sceneID="Jl1-Ru-HZH">
             <objects>
-                <tableViewController title="Actor Popularity" id="y1r-AL-x8j" customClass="AnalysisViewController" customModule="Jujube" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="analysisVC" title="Actor Popularity" id="y1r-AL-x8j" customClass="AnalysisViewController" customModule="Jujube" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dbt-Nn-Wgh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,11 +209,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Actor Popularity" id="OIa-zd-7vO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="F0j-Eh-a0y"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="PGe-LR-7Px">
-                            <connections>
-                                <action selector="onDoneTapped" destination="y1r-AL-x8j" id="SSa-Fi-hK8"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QB8-x2-KiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,9 +222,53 @@
                     <view key="view" contentMode="scaleToFill" id="1sw-C9-KXI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIK-A0-iiR">
+                                <rect key="frame" x="127" y="173.5" width="120" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="TxV-HY-efP"/>
+                                    <constraint firstAttribute="height" constant="120" id="XFz-wh-5PR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XC-k4-5jD" customClass="SlidingText" customModule="Jujube" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="319" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="yXN-Mu-lEf"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                        <color key="value" red="0.76089900732040405" green="0.25649610161781311" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="labelSize">
+                                        <real key="value" value="26"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="labelTexts">
+                                        <string key="value">Counting cat pictures|n
+Checking out selfies|n
+Discarding nudes|n
+Figuring out car model|n
+Handling awesomeness|n
+Ignoring landscapes</string>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5XC-k4-5jD" firstAttribute="top" secondItem="ZIK-A0-iiR" secondAttribute="bottom" constant="26" id="6pH-eL-Ykn"/>
+                            <constraint firstItem="ZIK-A0-iiR" firstAttribute="centerY" secondItem="1sw-C9-KXI" secondAttribute="centerY" constant="-100" id="B0T-Qb-9tC"/>
+                            <constraint firstItem="cFc-bY-jgF" firstAttribute="trailing" secondItem="5XC-k4-5jD" secondAttribute="trailing" id="GPM-4S-yP3"/>
+                            <constraint firstItem="5XC-k4-5jD" firstAttribute="leading" secondItem="cFc-bY-jgF" secondAttribute="leading" id="S80-r3-AY2"/>
+                            <constraint firstItem="ZIK-A0-iiR" firstAttribute="centerX" secondItem="1sw-C9-KXI" secondAttribute="centerX" id="fe7-Rc-O5h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cFc-bY-jgF"/>
                     </view>
+                    <connections>
+                        <outlet property="loadingLabel" destination="5XC-k4-5jD" id="9vN-uF-qfi"/>
+                        <outlet property="loadingView" destination="ZIK-A0-iiR" id="MND-2F-9gr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xz-zc-zEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,4 +307,7 @@
         <image name="likeIcon" width="512" height="512"/>
         <image name="user-default" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kmF-yo-jyW"/>
+    </inferredMetricsTieBreakers>
 </document>

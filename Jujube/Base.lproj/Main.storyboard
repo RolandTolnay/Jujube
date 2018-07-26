@@ -84,6 +84,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lJp-AN-64e"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hi4-C0-J97">
+                                <rect key="frame" x="253" y="625" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -91,6 +94,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IR9-3D-0es" secondAttribute="trailing" constant="6" id="KcA-qG-VeD"/>
                             <constraint firstItem="IR9-3D-0es" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="SZi-Ka-dfY"/>
                             <constraint firstItem="IR9-3D-0es" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="mKI-Qf-wFs"/>
+                            <constraint firstItem="hi4-C0-J97" firstAttribute="centerY" secondItem="Sdy-p6-Rm0" secondAttribute="centerY" id="pmZ-PY-Vtr"/>
+                            <constraint firstItem="hi4-C0-J97" firstAttribute="leading" secondItem="Sdy-p6-Rm0" secondAttribute="trailing" constant="8" id="riv-O2-6jf"/>
                             <constraint firstItem="Sdy-p6-Rm0" firstAttribute="top" secondItem="IR9-3D-0es" secondAttribute="bottom" constant="16" id="siu-vo-dke"/>
                             <constraint firstItem="Sdy-p6-Rm0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wh2-dL-7bT"/>
                         </constraints>
@@ -106,6 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="IR9-3D-0es" id="syr-8P-HQx"/>
+                        <outlet property="loadingIndicator" destination="hi4-C0-J97" id="6YY-38-wox"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

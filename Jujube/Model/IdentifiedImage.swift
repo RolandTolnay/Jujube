@@ -8,8 +8,13 @@
 
 import UIKit
 
-struct IdentifiedImage {
+struct IdentifiedImage: CustomStringConvertible {
 
   let image: UIImage
   let actor: String
+
+  var description: String {
+
+    return "Actor: \(actor)"
+  }
 }

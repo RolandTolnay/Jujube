@@ -16,18 +16,33 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>instagram</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>InstagramClientId</key>
+	<string>fb7a3b11f443472bbc3efa5b1df179ea</string>
+	<key>InstagramRedirectURI</key>
+	<string>https://www.google.com</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>This app uses the camera for testing purposes</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app uses the library for testing purposes</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-  <key>InstagramClientId</key>
-  <string>fb7a3b11f443472bbc3efa5b1df179ea</string>
-  <key>InstagramRedirectURI</key>
-  <string>https://www.google.com</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -45,9 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-  <key>NSCameraUsageDescription</key>
-  <string>This app uses the camera for testing purposes</string>
-  <key>NSPhotoLibraryUsageDescription</key>
-  <string>This app uses the library for testing purposes</string>
 </dict>
 </plist>

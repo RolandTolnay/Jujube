@@ -36,8 +36,12 @@ class MainViewController: UIViewController {
         return
       }
       
-      self.instaService.latestImages(completion: { (data) in
-        print("adsad")
+      self.instaService.latestImages(completion: { (analyzedActors) in
+        guard let analyzedActors = analyzedActors else {
+          return
+        }
+        
+        BestPicAlgorithm.shared.setup(withActors: analyzedActors)
       })
     }
   }

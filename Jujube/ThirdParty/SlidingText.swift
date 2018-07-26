@@ -25,7 +25,7 @@ class SlidingText : UIView{
         }
     }
     
-    @IBInspectable var labelSize: CGFloat = CGFloat(17.0){
+    @IBInspectable var labelSize: CGFloat = CGFloat(17.0) {
         didSet{
             label.font = UIFont(name: labelFont, size: labelSize)
         }
@@ -66,7 +66,7 @@ class SlidingText : UIView{
     
     
     
-    @IBInspectable var timeToSlide: Double = 2.0 {
+    @IBInspectable var timeToSlide: Double = 1.5 {
         didSet {
             timer?.invalidate()
             startOrResumeTimer()

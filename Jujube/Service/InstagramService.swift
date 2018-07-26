@@ -17,6 +17,10 @@ class InstagramService {
                                               qos: .background,
                                               attributes: .concurrent)
   
+  func isLoggedIn() -> Bool {
+    
+    return api.isAuthenticated
+  }
   
   func login(navigationController: UINavigationController,
              completion: @escaping (_ success: Bool) -> Void) {

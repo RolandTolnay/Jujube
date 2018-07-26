@@ -11,6 +11,9 @@ PODS:
   - Lightbox (2.1.2):
     - Hue (~> 3.0)
     - Imaginary (~> 3.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - SwiftInstagram (1.1.1):
     - SwiftInstagram/Core (= 1.1.1)
   - SwiftInstagram/Core (1.1.1)
@@ -21,6 +24,7 @@ DEPENDENCIES:
   - Hue
   - ImagePicker
   - Lightbox
+  - SDWebImage
   - SwiftInstagram (~> 1.1.1)
 
 SPEC REPOS:
@@ -31,6 +35,7 @@ SPEC REPOS:
     - ImagePicker
     - Imaginary
     - Lightbox
+    - SDWebImage
     - SwiftInstagram
 
 EXTERNAL SOURCES:
@@ -50,8 +55,9 @@ SPEC CHECKSUMS:
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
   Imaginary: 9b45836a5af881f452a86e0a1215772ae4712d00
   Lightbox: 2dc267df8be2285bc7724cb11cbbf4aaaf59dced
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
 
-PODFILE CHECKSUM: 47ddc66c2b44b6fc8d76f54448e2008144d027a3
+PODFILE CHECKSUM: 02bcb8171b31d3e967a3845d6077ff8f095a471f
 
 COCOAPODS: 1.5.3

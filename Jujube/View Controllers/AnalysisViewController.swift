@@ -10,30 +10,35 @@ import UIKit
 
 class AnalysisViewController: UITableViewController {
 
-    var actorAverages = [ActorAverage]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  var actorAverages = [ActorAverage]()
+  var maxLikes: Float = 0.0
 
-        actorAverages = BestPicAlgorithm.shared.getAnalysisResults()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    actorAverages = BestPicAlgorithm.shared.getAnalysisResults()
+    actorAverages.forEach {
+      if $0.average > maxLikes {
+        maxLikes = $0.average
+      }
     }
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    return actorAverages.count
+  }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return actorAverages.count
+    if let cell = tableView.dequeueReusableCell(with: AnalysisCell.self) {
+      cell.setup(with: actorAverages[indexPath.row], forMaxLikes: maxLikes)
+      return cell
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(with: AnalysisCell.self) {
-            cell.setup(with: actorAverages[indexPath.row])
-            return cell
-        }
-        return UITableViewCell()
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
-        return UIView()
-    }
+    return UITableViewCell()
+  }
+
+  override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+
+    return UIView()
+  }
 }

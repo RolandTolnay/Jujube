@@ -10,5 +10,6 @@ target 'Jujube' do
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'ImagePicker'
   pod 'Hero'
+  pod 'SwiftInstagram', '~> 1.1.1'
 
 end

@@ -4,16 +4,21 @@ PODS:
     - ChameleonFramework/Default
   - Hero (1.2.0)
   - ImagePicker (3.0.0)
+  - SwiftInstagram (1.1.1):
+    - SwiftInstagram/Core (= 1.1.1)
+  - SwiftInstagram/Core (1.1.1)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Hero
   - ImagePicker
+  - SwiftInstagram (~> 1.1.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Hero
     - ImagePicker
+    - SwiftInstagram
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -28,7 +33,8 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
+  SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
 
-PODFILE CHECKSUM: 36e1f22c4f6e4c93c8e3fb0841a93f8fcfcbca5f
+PODFILE CHECKSUM: ebc7a5aa82ce33443696c1dba45f9af300aeda91
 
 COCOAPODS: 1.5.3

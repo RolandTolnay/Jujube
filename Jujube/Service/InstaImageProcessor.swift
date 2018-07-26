@@ -3,6 +3,8 @@
 //  Copyright © 2018 iQuest Technologies. All rights reserved.
 //
 
+import Foundation
+import UIKit
 import CoreML
 import Vision
 
@@ -28,6 +30,23 @@ class InstaImageProcessor: ImageProcessor {
             }
         } catch {
             debugPrint(error)
+        }
+    }
+    
+    func processImages(images: [UIImage], completion: @escaping ([IdentifiedImage]) -> ()) {
+        let dispatchGroup = DispatchGroup()
+        var result = [IdentifiedImage]()
+        for image in images {
+            let imageData = UIImagePNGRepresentation(image) ?? Data()
+            dispatchGroup.enter()
+            processImage(image: imageData) { classificationIdentifier in
+                let identifiedImage = IdentifiedImage(image: image, actor: classificationIdentifier ?? "")
+                result.append(identifiedImage)
+                dispatchGroup.leave()
+            }
+        }
+        dispatchGroup.notify(queue: DispatchQueue.main) {
+            completion(result)
         }
     }
 }

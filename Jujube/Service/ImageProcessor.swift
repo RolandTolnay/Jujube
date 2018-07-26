@@ -4,7 +4,9 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ImageProcessor {
     func processImage(image: Data, completion: @escaping (String?) -> ())
+    func processImages(images: [UIImage], completion: @escaping ([IdentifiedImage]) -> ())
 }

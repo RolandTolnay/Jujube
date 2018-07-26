@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F639E82109B57C002FDB0F /* ImageProcessor.swift */; };
 		AF6F21AC2109B0BB0055B99E /* Cell+convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21AB2109B0BB0055B99E /* Cell+convenience.swift */; };
-		AF6F21AE2109B4C60055B99E /* InstaActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21AD2109B4C60055B99E /* InstaActor.swift */; };
+		AF6F21B52109B94E0055B99E /* IdentifiedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B42109B94E0055B99E /* IdentifiedImage.swift */; };
+		AF6F21B72109B9710055B99E /* AnalyzedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B62109B9710055B99E /* AnalyzedImage.swift */; };
+		AF6F21B92109B9960055B99E /* AnalyzedActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F21B82109B9960055B99E /* AnalyzedActor.swift */; };
 		AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940EB2109A025001A389B /* AppDelegate.swift */; };
 		AF7940EE2109A025001A389B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7940ED2109A025001A389B /* MainViewController.swift */; };
 		AF7940F12109A025001A389B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7940EF2109A025001A389B /* Main.storyboard */; };
@@ -26,7 +28,9 @@
 		56F639E82109B57C002FDB0F /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		850AF28C01FE5D218A30CF1D /* Pods-Jujube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jujube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jujube/Pods-Jujube.debug.xcconfig"; sourceTree = "<group>"; };
 		AF6F21AB2109B0BB0055B99E /* Cell+convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cell+convenience.swift"; sourceTree = "<group>"; };
-		AF6F21AD2109B4C60055B99E /* InstaActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaActor.swift; sourceTree = "<group>"; };
+		AF6F21B42109B94E0055B99E /* IdentifiedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiedImage.swift; sourceTree = "<group>"; };
+		AF6F21B62109B9710055B99E /* AnalyzedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzedImage.swift; sourceTree = "<group>"; };
+		AF6F21B82109B9960055B99E /* AnalyzedActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzedActor.swift; sourceTree = "<group>"; };
 		AF7940E82109A025001A389B /* Jujube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jujube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF7940EB2109A025001A389B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF7940ED2109A025001A389B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +84,9 @@
 		AF6F21AF2109B4CB0055B99E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AF6F21AD2109B4C60055B99E /* InstaActor.swift */,
+				AF6F21B42109B94E0055B99E /* IdentifiedImage.swift */,
+				AF6F21B62109B9710055B99E /* AnalyzedImage.swift */,
+				AF6F21B82109B9960055B99E /* AnalyzedActor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,7 +114,6 @@
 			children = (
 				AF7940EB2109A025001A389B /* AppDelegate.swift */,
 				AF6F21AF2109B4CB0055B99E /* Model */,
-				AF7941022109AFC4001A389B /* View Controllers */,
 				AF7941092109B090001A389B /* Extensions */,
 				56F639E72109B556002FDB0F /* Service */,
 				AF7941032109AFD9001A389B /* View */,
@@ -296,12 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6F21B52109B94E0055B99E /* IdentifiedImage.swift in Sources */,
+				AF6F21B92109B9960055B99E /* AnalyzedActor.swift in Sources */,
 				AF7940EE2109A025001A389B /* MainViewController.swift in Sources */,
 				AF6F21AC2109B0BB0055B99E /* Cell+convenience.swift in Sources */,
-				AF6F21AE2109B4C60055B99E /* InstaActor.swift in Sources */,
 				AF7941052109B007001A389B /* PhotoCell.swift in Sources */,
 				AF7940EC2109A025001A389B /* AppDelegate.swift in Sources */,
 				56F639E92109B57C002FDB0F /* ImageProcessor.swift in Sources */,
+				AF6F21B72109B9710055B99E /* AnalyzedImage.swift in Sources */,
 				AF7940FF2109A78B001A389B /* AnalysisViewController.swift in Sources */,
 				AF7941012109A805001A389B /* LoadingViewController.swift in Sources */,
 			);

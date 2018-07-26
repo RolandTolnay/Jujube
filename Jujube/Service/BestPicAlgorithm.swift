@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate struct ActorAverage {
+private struct ActorAverage {
     let actor: String
     var average: Float
 }
@@ -21,13 +21,12 @@ class BestPicAlgorithm {
     func setup(withActors actors: [AnalyzedActor]) {
         
         actors.forEach { analyzedActor in
-            if !averages.contains(where: {
-                if $0.actor == analyzedActor.actor {
-                    $0.average = ($0.average + Float(analyzedActor.likeCount))/2
-                    return true
-                }
-                return false
+            if var actorAverage = averages.first(where: {
+                return $0.actor == analyzedActor.actor
             }) {
+                actorAverage.average = (actorAverage.average + Float(analyzedActor.likeCount))/2
+
+            } else {
                 averages.append(ActorAverage(actor: analyzedActor.actor, average: Float(analyzedActor.likeCount)))
             }
         }
@@ -42,5 +41,16 @@ class BestPicAlgorithm {
             })
             analyzedImages.append(AnalyzedImage(image: image.image, averageLikes: actorAverage?.average))
         }
+        return analyzedImages.sorted(by: { (image1, image2) -> Bool in
+            if let firstImageAverage = image1.averageLikes {
+                if let secondImageAverage = image2.averageLikes {
+                    return firstImageAverage > secondImageAverage
+                } else {
+                    return true
+                }
+            } else {
+                return image2.averageLikes == nil
+            }
+        })
     }
 }

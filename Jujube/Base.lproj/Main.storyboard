@@ -151,11 +151,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pau-JT-6BM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pau-JT-6BM">
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="80"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Actor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-p6-wx0">
-                                            <rect key="frame" x="16" y="26" width="214" height="26"/>
+                                            <rect key="frame" x="16" y="26" width="273" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="XPj-xJ-nIu"/>
                                             </constraints>
@@ -170,9 +170,10 @@
                                                 <constraint firstAttribute="width" constant="30" id="wSM-3I-8U2"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAg-Dc-f8M">
-                                            <rect key="frame" x="238" y="27" width="82.5" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAg-Dc-f8M">
+                                            <rect key="frame" x="297" y="27" width="23.5" height="26"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="J5F-0B-zgf"/>
                                                 <constraint firstAttribute="height" constant="26" id="h48-bF-XiN"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
@@ -181,9 +182,9 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="TAg-Dc-f8M" firstAttribute="leading" secondItem="Pau-JT-6BM" secondAttribute="trailing" constant="5" id="Gq4-wR-ECi"/>
                                         <constraint firstItem="TAg-Dc-f8M" firstAttribute="centerY" secondItem="3En-Wr-vhT" secondAttribute="centerY" id="IUi-FV-Hlo"/>
                                         <constraint firstAttribute="bottom" secondItem="Pau-JT-6BM" secondAttribute="bottom" constant="-0.5" id="IvS-4T-RpS"/>
-                                        <constraint firstAttribute="trailing" secondItem="Pau-JT-6BM" secondAttribute="trailing" id="NTT-Va-9TQ"/>
                                         <constraint firstItem="zOY-p6-wx0" firstAttribute="centerY" secondItem="3En-Wr-vhT" secondAttribute="centerY" id="P7m-nM-TRd"/>
                                         <constraint firstItem="zOY-p6-wx0" firstAttribute="leading" secondItem="3En-Wr-vhT" secondAttribute="leading" constant="16" id="b0o-5W-7UU"/>
                                         <constraint firstItem="TAg-Dc-f8M" firstAttribute="leading" secondItem="zOY-p6-wx0" secondAttribute="trailing" constant="8" id="qfu-Mm-AP0"/>
@@ -208,9 +209,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Actor Popularity" id="OIa-zd-7vO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="F0j-Eh-a0y"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="PGe-LR-7Px">
+                        <barButtonItem key="rightBarButtonItem" title="Reanalyse" style="done" id="IBp-ug-bSi">
                             <connections>
-                                <action selector="onDoneTapped" destination="y1r-AL-x8j" id="SSa-Fi-hK8"/>
+                                <action selector="onReanalyseTapped" destination="y1r-AL-x8j" id="c8m-j0-Ui8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

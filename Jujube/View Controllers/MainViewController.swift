@@ -35,7 +35,6 @@ class MainViewController: UIViewController {
 
   @IBOutlet weak var chooseNewPhotosButton: UIButton!
   @IBOutlet weak var galleryButton: UIButton!
-  private let instaService = InstagramService()
 
   private var state: State = .empty
 
@@ -67,7 +66,7 @@ class MainViewController: UIViewController {
       return
     }
     
-    instaService.login(navigationController: navigationController) { (success) in
+    InstagramService.shared.login(navigationController: navigationController) { (success) in
       
       guard success else {
         return
@@ -78,19 +77,18 @@ class MainViewController: UIViewController {
         return
       }
       
-      vc.instaService = self.instaService
       self.present(vc, animated: true, completion: nil)
     }
   }
 
   @IBAction func didTapAccountIcon(_ sender: UIBarButtonItem) {
     
-    if instaService.isLoggedIn() {
+//    if instaService.isLoggedIn() {
       performSegue(withIdentifier: "accountSegue",
                    sender: self)
-    } else {
-      presentLogin()
-    }
+//    } else {
+//      presentLogin()
+//    }
     
   }
   @IBAction func onChoosePhotosTapped(_ sender: Any) {

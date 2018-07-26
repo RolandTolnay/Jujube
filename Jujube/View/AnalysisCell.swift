@@ -32,7 +32,7 @@ class AnalysisCell: UITableViewCell {
     
     private func downloadImageForActor(_ actor: String) {
         
-        let url = URL(string: "https://www.googleapis.com/customsearch/v1?q=\(actor)&searchType=image&key=AIzaSyCvOtEwugKp-TxePAQ3V0tZ9uiKw6l6t88&cx=017426432613049717893:d1u8bllqhjo")
+        let url = URL(string: "https://www.googleapis.com/customsearch/v1?q=\(actor)&searchType=image&key=AIzaSyAyW6X5Bh-JHxkYyQmcwS6URlsR-dU24xc&cx=017426432613049717893:d1u8bllqhjo")
         let urlSession = Foundation.URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: OperationQueue.main)
         let dataTask = urlSession.dataTask(with: url!) { (data, response, error) in
             if let response = response as? HTTPURLResponse {
@@ -40,7 +40,8 @@ class AnalysisCell: UITableViewCell {
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                             let items = json["items"] as! [[String:Any]]
-                            let link = items[0]["link"] as! String
+                            let index = Int(arc4random_uniform(UInt32(items.count)))
+                            let link = items[index]["link"] as! String
                             print(link)
                             self.backgroundImage.sd_setImage(with: URL(string: link), placeholderImage: UIImage())
                         }

@@ -10,12 +10,10 @@ import UIKit
 
 class LoadingViewController: UIViewController {
   
-  var instaService: InstagramService!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      self.instaService.latestImages(completion: { (analyzedActors) in
+      InstagramService.shared.latestImages(completion: { (analyzedActors) in
         guard let analyzedActors = analyzedActors else {
           return
         }

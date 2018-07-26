@@ -11,6 +11,7 @@ import SwiftInstagram
 
 class InstagramService {
   
+    static let shared = InstagramService()
   private let api = Instagram.shared
   private let imageProcessor = InstaImageProcessor()
   private let concurrentQueue = DispatchQueue(label: "cache-concurrent-queue",

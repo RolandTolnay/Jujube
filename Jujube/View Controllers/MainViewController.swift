@@ -14,6 +14,7 @@ import Lightbox
 class MainViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
+  let instaService = InstagramService()
 
   private var analyzedImages = [AnalyzedImage]()
 
@@ -25,23 +26,24 @@ class MainViewController: UIViewController {
   
   private func presentLogin() {
     
-    let api = Instagram.shared
-    
     guard let navigationController = navigationController else {
       return
     }
     
-    api.login(from: navigationController, success: {
-      api.recentMedia(fromUser: "self", count: 20, success: { mediaList in
+    instaService.login(navigationController: navigationController) { (success) in
+      
+      guard success else {
+        return
+      }
+      
+      self.instaService.latestImages(completion: { (analyzedActors) in
+        guard let analyzedActors = analyzedActors else {
+          return
+        }
         
-        print(mediaList)
-        
-      }, failure: { error in
-        print("Could not fetch user media with error: \(error.localizedDescription)")
+        BestPicAlgorithm.shared.setup(withActors: analyzedActors)
       })
-    }, failure: { error in
-      print("Could not login with error: \(error.localizedDescription)")
-    })
+    }
   }
 
 

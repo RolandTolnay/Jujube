@@ -12,7 +12,8 @@ class PhotoCell: UICollectionViewCell {
 
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var likesLabel: UILabel!
-
+    @IBOutlet weak var likeImageView: UIImageView!
+    
   override func layoutSubviews() {
     super.layoutSubviews()
 
@@ -26,6 +27,8 @@ class PhotoCell: UICollectionViewCell {
     imageView.image = image
 
     let likes = Int(estimatedLikes ?? 0)
+    likeImageView.image = likes == 0 ? UIImage(named: "new") : UIImage(named: "likesHeart")
+    likesLabel.isHidden = likes == 0
     likesLabel.text = "\(likes)"
   }
 }
